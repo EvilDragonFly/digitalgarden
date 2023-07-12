@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/digital garden/","tags":["gardenEntry"],"noteIcon":""}
 ---
 
+![emre-PjjMG6VyHs4-unsplash.jpg](/img/user/banner/emre-PjjMG6VyHs4-unsplash.jpg)
 
 [obsidan help](https://help.obsidian.md/Obsidian/Index)
 
