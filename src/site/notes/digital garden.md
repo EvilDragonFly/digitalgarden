@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/digital garden/","tags":["gardenEntry"]}
+{"dg-publish":true,"permalink":"/digital garden/","tags":["gardenEntry"],"noteIcon":""}
 ---
 
 
@@ -16,4 +16,5 @@
 
 
 ## 已发布文章
-[[code_languages/cpp/cpp面试问题汇总/面经整理发布版\|面经整理发布版]]
+- [[code_languages/cpp/cpp面试问题汇总/面经整理发布版\|面经整理发布版]]
+- [[network/cntlm\|cntlm]]
