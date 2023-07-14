@@ -1,7 +1,8 @@
 ---
-{"dg-publish":true,"permalink":"/digital garden/","tags":["gardenEntry"],"noteIcon":""}
+{"dg-publish":true,"dg-home":true,"dg-note-icon":1,"permalink":"/digital garden/","tags":["gardenEntry"],"dgPassFrontmatter":true,"noteIcon":1}
 ---
 
+#homepage/obsdian
 ![emre-PjjMG6VyHs4-unsplash.jpg|1200x400](/img/user/banner/emre-PjjMG6VyHs4-unsplash.jpg)
 [obsidan help](https://help.obsidian.md/Obsidian/Index)
 
