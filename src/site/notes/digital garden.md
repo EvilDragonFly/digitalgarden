@@ -2,8 +2,7 @@
 {"dg-publish":true,"permalink":"/digital garden/","tags":["gardenEntry"],"noteIcon":""}
 ---
 
-
-
+![lukas-NLSXFjl_nhc-unsplash.jpg|1200](/img/user/banner/lukas-NLSXFjl_nhc-unsplash.jpg)
 [obsidan help](https://help.obsidian.md/Obsidian/Index)
 
 # obidian plugins
