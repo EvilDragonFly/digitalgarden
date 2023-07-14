@@ -5,14 +5,14 @@
 ![lukas-NLSXFjl_nhc-unsplash.jpg|1200](/img/user/banner/lukas-NLSXFjl_nhc-unsplash.jpg)
 [obsidan help](https://help.obsidian.md/Obsidian/Index)
 
-# obidian plugins
-1. link card
-2. execute code
-3. obsidian git
-4. admonition
-5. code files
-6. editing tools
-7. digital garden
+> [!success] # obidian plugins
+> 1. link card
+> 2. execute code
+> 3. obsidian git
+> 4. admonition
+> 5. code files
+> 6. editing tools
+> 7. digital garden
 
 
 ## 已发布文章
