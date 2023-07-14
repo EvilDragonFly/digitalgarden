@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/digital garden/","tags":["gardenEntry"],"noteIcon":""}
 ---
 
-![lukas-NLSXFjl_nhc-unsplash.jpg|1200](/img/user/banner/lukas-NLSXFjl_nhc-unsplash.jpg)
+![emre-PjjMG6VyHs4-unsplash.jpg|1200x400](/img/user/banner/emre-PjjMG6VyHs4-unsplash.jpg)
 [obsidan help](https://help.obsidian.md/Obsidian/Index)
 
 > [!success] # obidian plugins
@@ -15,6 +15,10 @@
 > 7. digital garden
 
 
-## 已发布文章
+## 已发布文章[^1]
 - [[code_languages/cpp/cpp面试问题汇总/面经整理发布版\|面经整理发布版]]
 - [[network/cntlm\|cntlm]]
+
+
+
+[^1]: all i have *learnt*
