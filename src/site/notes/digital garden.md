@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-home":true,"dg-note-icon":1,"permalink":"/digital garden/","tags":["gardenEntry"],"dgPassFrontmatter":true,"noteIcon":1}
+{"dg-publish":true,"dg-home":true,"permalink":"/digital garden/","tags":["gardenEntry"],"dgPassFrontmatter":true,"noteIcon":""}
 ---
 
 #homepage/obsdian
