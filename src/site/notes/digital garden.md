@@ -18,7 +18,10 @@
 
 ## 已发布文章[^1]
 - [[code_languages/cpp/cpp面试问题汇总/面经整理发布版\|面经整理发布版]]
-- [[network/cntlm\|cntlm]]
+- [[Linux/network/cntlm\|cntlm]]
+- [[Linux/network/network card\|network card]]
+- [[mysql/mysql deploy\|mysql deploy]]
+- [[virtualization/deploy virtual machine\|deploy virtual machine]]
 
 
 
