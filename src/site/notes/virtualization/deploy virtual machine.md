@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/virtualization/deploy virtual machine/","dgPassFrontmatter":true,"noteIcon":""}
+{"dg-publish":true,"permalink":"/virtualization/deploy virtual machine/","noteIcon":""}
 ---
 
 #virsh #virt-install 
