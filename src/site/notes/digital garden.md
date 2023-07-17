@@ -16,7 +16,7 @@
 > 7. digital garden
 
 
-## 已发布文章[^1]
+## 已发布文章
 - [[code_languages/cpp/cpp面试问题汇总/面经整理发布版\|面经整理发布版]]
 - [[Linux/network/cntlm\|cntlm]]
 - [[Linux/network/network card\|network card]]
@@ -24,5 +24,3 @@
 - [[virtualization/deploy virtual machine\|deploy virtual machine]]
 
 
-
-[^1]: all i have *learnt*
