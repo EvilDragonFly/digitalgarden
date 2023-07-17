@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/src/site/notes/code languages/python/basic syntax/","dgPassFrontmatter":true,"noteIcon":""}
+{"dg-publish":true,"permalink":"/src/site/notes/code languages/python/basic syntax/","noteIcon":""}
 ---
 
 
