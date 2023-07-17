@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/greedy/","dgPassFrontmatter":true,"noteIcon":""}
+{"dg-publish":true,"permalink":"/greedy/","noteIcon":""}
 ---
 
 #greedy
