@@ -3,7 +3,7 @@
 ---
 
 #homepage/obsdian
-![emre-PjjMG6VyHs4-unsplash.jpg|900x300](/img/user/banner/emre-PjjMG6VyHs4-unsplash.jpg)
+![[emre-PjjMG6VyHs4-unsplash.jpg]
 [obsidan help](https://help.obsidian.md/Obsidian/Index)
 
 > [!success] # obidian plugins
