@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/mysql/mysql deploy/","dgPassFrontmatter":true,"noteIcon":""}
+{"dg-publish":true,"permalink":"/mysql/mysql deploy/","noteIcon":""}
 ---
 
 ## deploy mysql
