@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Linux/packages/rpm/","dgPassFrontmatter":true,"noteIcon":""}
+{"dg-publish":true,"permalink":"/Linux/packages/rpm/","noteIcon":""}
 ---
 
 #rpm #yum
