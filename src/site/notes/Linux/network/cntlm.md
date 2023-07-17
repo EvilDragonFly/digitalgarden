@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Linux/network/cntlm/","dgPassFrontmatter":true,"noteIcon":""}
+{"dg-publish":true,"permalink":"/Linux/network/cntlm/","noteIcon":""}
 ---
 
 #proxy #network
