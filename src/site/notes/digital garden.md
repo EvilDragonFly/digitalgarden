@@ -1,20 +1,28 @@
 ---
-{"dg-publish":true,"permalink":"/digital garden/","tags":["gardenEntry"],"noteIcon":""}
+{"dg-publish":true,"dg-home":true,"dg-note-icon":1,"permalink":"/digital garden/","tags":["gardenEntry"],"dgPassFrontmatter":true,"noteIcon":1}
 ---
 
-![lukas-NLSXFjl_nhc-unsplash.jpg|1200](/img/user/banner/lukas-NLSXFjl_nhc-unsplash.jpg)
+#homepage/obsdian
+![emre-PjjMG6VyHs4-unsplash.jpg|1200x400](/img/user/banner/emre-PjjMG6VyHs4-unsplash.jpg)
 [obsidan help](https://help.obsidian.md/Obsidian/Index)
 
-# obidian plugins
-1. link card
-2. execute code
-3. obsidian git
-4. admonition
-5. code files
-6. editing tools
-7. digital garden
+> [!success] # obidian plugins
+> 1. link card
+> 2. execute code
+> 3. obsidian git
+> 4. admonition
+> 5. code files
+> 6. editing tools
+> 7. digital garden
 
 
-## 已发布文章
+## 已发布文章[^1]
 - [[code_languages/cpp/cpp面试问题汇总/面经整理发布版\|面经整理发布版]]
-- [[network/cntlm\|cntlm]]
+- [[Linux/network/cntlm\|cntlm]]
+- [[Linux/network/network card\|network card]]
+- [[mysql/mysql deploy\|mysql deploy]]
+- [[virtualization/deploy virtual machine\|deploy virtual machine]]
+
+
+
+[^1]: all i have *learnt*
