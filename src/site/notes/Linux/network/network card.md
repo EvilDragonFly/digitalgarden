@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Linux/network/network card/","dgPassFrontmatter":true,"noteIcon":""}
+{"dg-publish":true,"permalink":"/Linux/network/network card/","noteIcon":""}
 ---
 
 查看网卡的pci地址(新版的linux的网卡一般可以通过网卡名识别)

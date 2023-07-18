@@ -1,9 +1,9 @@
 ---
-{"dg-publish":true,"dg-home":true,"dg-note-icon":1,"permalink":"/digital garden/","tags":["gardenEntry"],"dgPassFrontmatter":true,"noteIcon":1}
+{"dg-publish":true,"permalink":"/digital garden/","tags":["gardenEntry"],"noteIcon":""}
 ---
 
 #homepage/obsdian
-![emre-PjjMG6VyHs4-unsplash.jpg|1200x400](/img/user/banner/emre-PjjMG6VyHs4-unsplash.jpg)
+![emre-PjjMG6VyHs4-unsplash.jpg|800x400](/img/user/banner/emre-PjjMG6VyHs4-unsplash.jpg)
 [obsidan help](https://help.obsidian.md/Obsidian/Index)
 
 > [!success] # obidian plugins
@@ -16,7 +16,7 @@
 > 7. digital garden
 
 
-## 已发布文章[^1]
+## 已发布文章
 - [[code_languages/cpp/cpp面试问题汇总/面经整理发布版\|面经整理发布版]]
 - [[Linux/network/cntlm\|cntlm]]
 - [[Linux/network/network card\|network card]]
@@ -24,5 +24,3 @@
 - [[virtualization/deploy virtual machine\|deploy virtual machine]]
 
 
-
-[^1]: all i have *learnt*
