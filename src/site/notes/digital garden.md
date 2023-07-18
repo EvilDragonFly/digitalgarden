@@ -22,5 +22,7 @@
 - [[Linux/network/network card\|network card]]
 - [[mysql/mysql deploy\|mysql deploy]]
 - [[virtualization/deploy virtual machine\|deploy virtual machine]]
+- [[submodules/pve/docker/calibre-web\|calibre-web]]
+- [[submodules/pve/Disk Manage\|Disk Manage]]
 
 
