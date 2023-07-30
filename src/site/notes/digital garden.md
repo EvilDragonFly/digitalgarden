@@ -17,12 +17,12 @@
 
 
 ## 已发布文章
-- [[code_languages/cpp/cpp面试问题汇总/面经整理发布版\|面经整理发布版]]
-- [[Linux/network/cntlm\|cntlm]]
-- [[Linux/network/network card\|network card]]
-- [[mysql/mysql deploy\|mysql deploy]]
-- [[virtualization/deploy virtual machine\|deploy virtual machine]]
-- [[submodules/pve/docker/calibre-web\|calibre-web]]
-- [[submodules/pve/Disk Manage\|Disk Manage]]
+- [[ProgrammingLanguages/cpp/cpp面试问题汇总/面经整理发布版\|面经整理发布版]]
+- [[OperatingSystem/Linux/network/cntlm\|cntlm]]
+- [[OperatingSystem/Linux/network/network card\|network card]]
+- [[Database/MySQL/mysql deploy\|mysql deploy]]
+- [[Virtualization/deploy virtual machine\|deploy virtual machine]]
+- [[calibre-web\|calibre-web]]
+- [[Disk Manage\|Disk Manage]]
 
 
