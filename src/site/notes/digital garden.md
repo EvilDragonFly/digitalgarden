@@ -4,6 +4,10 @@
 
 #homepage
 
+🇨🇳🇩🇪🇯🇵🇺🇸
+@xuxiaolong🦜
+Hello🦌, 欢迎来到我的个人博客笔记网站（づ￣3￣）づ╭❤～！
+
 
 ## 推荐文章
 - [[ProgrammingLanguages/cpp/cpp面试问题汇总/面经整理发布版\|面经整理发布版]]
