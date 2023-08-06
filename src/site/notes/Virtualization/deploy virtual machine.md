@@ -26,8 +26,17 @@ virt-install --name master --memory 61440 --vcpus 16 --disk path=openEuler2-20-0
 
 虚拟机通过NAT通外网
 ```bash
+# -----  宿主机执行 ----------
+# 这里192.168.1.0/24为网桥网络地址，enp125s0f0为90.90.64.0/24网络地址网卡，宿主机使用cntlm通过工位机90.253.0.0/24的ip与外网通信
 echo 1 > /proc/sys/net/ipv4/ip_forward
 iptables -t nat -A POSTROUING -s '192.168.1.0/24' -o enp125s0f0 -j MASQUERADE
+# 如果宿主机也是通过代理与外网连接，则虚拟机内部需要配置一样的proxy
+#  ------  虚拟机执行 -------
+export http_proxy=90.253.xx.xx:3128
+export https_proxy=$http_proxy
+#如果虚拟机内有多个网卡，且没有和代理90.253.0.0/16网段的，则可能packet不一定从桥接宿主机的192.168.1.0/24地址的网卡发错，导致packet的source ip不是我们上面设置的nat的网络地址，没法使能NAT，所以需要我们添加一个路由规则，是的走代理的packet走192.168.1.0/24的网桥网卡
+# 写法： ip route add <network_ip>/<cidr> via <gateway_ip> dev <interface>
+ip route add 90.253.0.0/16 via 192.168.3.2 dev eth0 #这里的gateway是宿主机网桥地址
 ```
 虚拟机挂载rbd image:[参考](https://docs.ceph.com/en/latest/rbd/libvirt/)
 
