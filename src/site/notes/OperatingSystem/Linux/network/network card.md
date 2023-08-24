@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/OperatingSystem/Linux/network/network card/","noteIcon":""}
+{"dg-publish":true,"permalink":"/OperatingSystem/Linux/network/network card/","noteIcon":"","created":"","updated":""}
 ---
 
 查看网卡的pci地址(新版的linux的网卡一般可以通过网卡名识别)
@@ -23,5 +23,13 @@
 将bond的slave网卡删除
 `ip link set eth0 nomaster`
 查看bond的所有slave interfaces
-`cat /proc/net/bonding/bond0|grep slave`
+`cat /proc/net/bonding/bond0|grep -i slave`
 
+查看网络包
+```bash
+tcpdump -i <interface> host <host_ip>
+arping <hostip>
+```
+查看当前主机的arp cache
+如下可以看见openwrt的ip为192.168.66.100，对应的mac地址是56:35:9d:10:0c:c8
+![Pasted image 20230825001905.png](/img/user/pics/Pasted%20image%2020230825001905.png)
