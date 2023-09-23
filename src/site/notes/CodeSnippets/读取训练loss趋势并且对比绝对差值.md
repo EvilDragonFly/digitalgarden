@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/CodeSnippets/读取训练loss趋势并且对比绝对差值/","noteIcon":"","created":"","updated":""}
 ---
 
+#python #re #numpy #matplotlib #ai
+
 ```py
 import re
 import matplotlib.pyplot as plt
@@ -74,7 +76,7 @@ print(f"小于0.001的比例: {proportion}")
 plt.show()
 ```
 
-- 这里的match.group(1)的参数1表示正则表达式匹配的第一个子组，一个小括号代表一个子组
+- 这里的match.group(1)的参数1表示正则表达式匹配的第一个子组，一个小括号代表一个子组, 也称为capture group
 - 这里使用open打开文件的时候指定了文件编码，防止一些由于错误解码导致的错误，这里还指定了忽略解析文件的错误error='ignore'主要是防止文件内部出现给定编码之外的特殊字符而导致错误退出，如表示进度的符号
 - plt绘图时候制定了ylim(top=0.1)来制定y轴的最大值来约束绘图效果图
 - 使用numpy来进行一些对于数组的高效操作，比如计算数组平均值，数组内小于某一个值的比例等等
