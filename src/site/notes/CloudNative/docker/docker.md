@@ -7,10 +7,10 @@
 docker和maven，npm类似，代理和系统代理不一样需要单独配置，具体配置参考[docker docs](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
 关于docker的配置代理的文件主要是两个，可以根据需要编辑其中一个或者两个一起
 /etc/docker/daemon.json
-![Pasted image 20230922224955.png](/img/user/Pasted%20image%2020230922224955.png)
+![Pasted image 20230922224955.png](/img/user/pics/Pasted%20image%2020230922224955.png)
 /etc/systemd/system/docker.service.d/http-proxy.conf
 
-![Pasted image 20230922225041.png](/img/user/Pasted%20image%2020230922225041.png)
+![Pasted image 20230922225041.png](/img/user/pics/Pasted%20image%2020230922225041.png)
 编辑添加代理之后可以通过以下命令生效并查看是否成功生效
 
 ```bash
@@ -36,6 +36,7 @@ command2 $arg2
 docker build -t . --build-arg arg1='a' --build-arg='b'
 
 ```
+dockerfile中两个连续的RUN之间的状态并不连续一致的，每一个RUN开始都会进入到/home/currentUser目录下，而非后一个RUN命令开始会在前一个RUN最后所在的目录下
 ## 3. Docker的镜像
 docker镜像可以直接由dockerfile制备，或者可以将运行中的容器当前的文件系统和状态保存下来
 
@@ -43,6 +44,12 @@ docker镜像可以直接由dockerfile制备，或者可以将运行中的容器�
 docker commit container_name repo:tag #将当前容器状态保存到镜像repo:tag
 docker save repo:tag > repo.tar # 将镜像保存到本地文件repo.tar
 docker load < repo.tar # 从本地文件导入镜像
+
+docker export container-name > ex.tar # 将容器当前文件系统保存，不包含之前的layer
+docker import ex.tar new_img:tag # 从export出来的文件导出成本地镜像
+
+# 查看具体一个image的大小
+docker images image:tag 
 
 ```
 
@@ -72,3 +79,5 @@ docker attach container_name
 docker cp container_name:path host_path
 docker cp host_path container_name:path
 ```
+
+## 6. Docker Volume
