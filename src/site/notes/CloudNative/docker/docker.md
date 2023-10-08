@@ -56,7 +56,7 @@ docker images image:tag
 export/import与save/load的区别
 > export是从容器导出，save是从镜像导出，save会保存所有layer的信息，export不会保存所有layer的信息，因此导出文件更小，但是没法回滚
 
-
+<font color="#ffc000">对于想在镜像中保存文件，需要在docker run -v指定映射物理机文件夹子路径之外创建文件夹并保存，因为-v指定的物理机的路径之后将容器导出成镜像文件并不会保存下来，只是一个空文件夹</font>
 ## 4.容器的进出
 
 退出当前container而不stop当前container(exit会stop容器)
