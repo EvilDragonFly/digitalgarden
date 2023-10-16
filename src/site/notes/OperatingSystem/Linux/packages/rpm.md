@@ -1,8 +1,19 @@
 ---
-{"dg-publish":true,"permalink":"/OperatingSystem/Linux/packages/rpm/","noteIcon":""}
+{"dg-publish":true,"permalink":"/OperatingSystem/Linux/packages/rpm/","noteIcon":"","created":"","updated":""}
 ---
 
 #rpm #yum
+
+设置yum安装包时不进行ssl校验
+
+#ssl
+```bash
+# 编辑/etc/yum.conf,在[main]下加上
+sslverify=false
+
+```
+
+
 查看rpm包,例如test安装的文件
 
 ```bash
@@ -33,5 +44,5 @@ yum downgrade glibc\* --allowerasing
 `rpm -qf filepath`
 
 下载rpm到本地
-`yum install libtirpc-gen --downloadonly --destdir .`
+`yum install libtirpc-gen --downloadonly --downloaddir .`
 
