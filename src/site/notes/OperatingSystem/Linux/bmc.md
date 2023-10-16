@@ -18,3 +18,15 @@ check the bmc ip
 ```bash
 ipmitool lan print
 ```
+显示bmc日志
+
+```bash
+# system event log
+ipmitool sel list
+ipmitool sel elist
+# 搜集制定event id的bmc日志
+ipmitool sel get event_id
+# 清除bmc日志
+ipmitool sel clear
+
+```
