@@ -1,7 +1,8 @@
 ---
-{"dg-publish":true,"permalink":"/ProgrammingLanguages/shell/shell脚本的一些tricks/","noteIcon":"","created":"","updated":""}
+{"dg-publish":true,"permalink":"/ProgrammingLanguages/shell/shell脚本的一些tricks/","noteIcon":"3","created":"","updated":""}
 ---
 
+#shell
 ### 1. 字符串内替换
 
 ```bash
@@ -32,4 +33,9 @@ tar cf - $path | pv -s $(du -sb $path|awk '{print $1}') | gzip > file.tar.gz
 
 ```
 
-3. 
+#file
+3.查找大文件
+```shell
+find . -xdev -type f -size +100M -print | xargs ls -lh | \
+sort -k5,5 -h -r | head
+```
