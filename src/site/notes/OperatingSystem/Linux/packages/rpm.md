@@ -44,5 +44,12 @@ yum downgrade glibc\* --allowerasing
 `rpm -qf filepath`
 
 下载rpm到本地
-`yum install libtirpc-gen --downloadonly --downloaddir .`
+
+```bash
+yum install libtirpc-gen --downloadonly --destdir .
+#使用yum-utils中的命令
+yumdownloader package_name
+
+```
+
 
