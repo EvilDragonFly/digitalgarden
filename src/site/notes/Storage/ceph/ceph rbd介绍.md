@@ -34,8 +34,10 @@ ObjectDispatchLayer
 
 ## Librados/librbd Call Example
 - FIO example
-- 1. r = rados_create()
-- 2. 
+- 1. r = rados_create(&rbd->cluster,o->client_name);
+- 2. r = rados_connect(rbd->cluster);
+- 3. r = rados_ioctx_create(rbd->cluster, o->pool_name,&rbd->io_ctx);
+- 4. r = rbd_open(rbd->io_ctx, o->rbd_name, &rbd->image, NULL/*snap*/);
 - 5. read, write, flush
 
 - unshared rados: 1->2->3->4->1->2->3->4
