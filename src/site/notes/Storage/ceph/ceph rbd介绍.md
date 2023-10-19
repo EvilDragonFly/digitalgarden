@@ -6,7 +6,7 @@ reference articles:
 https://www.intel.com/content/www/us/en/developer/articles/technical/performance-tuning-of-ceph-rbd.html
 https://www.youtube.com/watch?v=UjpaZ-JH4Yo
 
-![Pasted image 20231019002305.png](/img/user/Pasted%20image%2020231019002305.png)
+![Pasted image 20231019002305.png](/img/user/pics/Pasted%20image%2020231019002305.png)
 ## osds storing data
 - ceph osd daemons存储数据作为objects以一个flat namespace(没有层级目录)，一个object含有一个identifier，binary data和包含一系列的name/value pair的metadata
 - 数据和元数据使用bluestore,memorystore和seastore(在开发完善中)存储
@@ -23,4 +23,4 @@ ImageDispatchLayer
 ObjectDispatchLayer
 
 ## Threads Model
-![Pasted image 20231019002342.png](/img/user/Pasted%20image%2020231019002342.png)
+![Pasted image 20231019002342.png](/img/user/pics/Pasted%20image%2020231019002342.png)
