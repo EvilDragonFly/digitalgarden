@@ -14,7 +14,6 @@ title:主页
 ```
 
 ```tagcloud
-shape: pentagon
 ```
 
 
