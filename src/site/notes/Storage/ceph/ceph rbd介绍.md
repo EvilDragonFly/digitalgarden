@@ -35,6 +35,7 @@ ObjectDispatchLayer
 ## Librados/librbd Call Example
 - FIO example
 - 1. r = rados_create()
+- 2. 
 
 - unshared rados: 1->2->3->4->1->2->3->4
-- shared rados: 1->2-><font color="#00b050">3->4</font>->3->4
+- shared rados: 1->2->3->4->3->4
