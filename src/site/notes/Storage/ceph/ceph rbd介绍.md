@@ -36,6 +36,16 @@ ObjectDispatchLayer
 - FIO example
 - 1. r = rados_create()
 - 2. 
+- 5. read, write, flush
 
 - unshared rados: 1->2->3->4->1->2->3->4
 - shared rados: 1->2->3->4->3->4
+
+
+## SPDK RBD bdev
+![Pasted image 20231019131329.png](/img/user/pics/Pasted%20image%2020231019131329.png)
+
+Call stack of unshared threads
+
+![Pasted image 20231019131348.png](/img/user/pics/Pasted%20image%2020231019131348.png)
+Call stack of shared threads
