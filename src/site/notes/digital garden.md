@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/digital garden/","pinned":true,"tags":["gardenEntry"],"noteIcon":"3","created":"","updated":""}
+{"dg-publish":true,"permalink":"/digital garden/","pinned":true,"tags":["gardenEntry"],"noteIcon":"3"}
 ---
 
 #homepage 
