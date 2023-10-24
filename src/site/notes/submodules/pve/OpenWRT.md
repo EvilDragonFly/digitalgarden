@@ -79,6 +79,15 @@ domain=lan
 然后我们直接网页访问openwrt.lan就可以志杰访问我们192.168.66.100上的openwrt网页
 ![Pasted image 20231024223051.png|undefined](/img/user/pics/Pasted%20image%2020231024223051.png)
 
+通过域名登录openwrt然后登录openclash服务，如何想要打开openclash的yacd面板的话需要输入secret(直接使用ip的话可以不用secret)
+如下图我们可以看到登录dashboard的地址由external-controller指定
+![Pasted image 20231024230642.png|undefined](/img/user/pics/Pasted%20image%2020231024230642.png)
+如果使用域名登录的话，需要add对应的ip:端口，然后填写secret登录
+secret可在openclash查看
+![Pasted image 20231024231127.png|undefined](/img/user/pics/Pasted%20image%2020231024231127.png)
+这里的密钥可以在Config Magager里面的yaml文件的secret字段进行配置
+![Pasted image 20231024231415.png|undefined](/img/user/pics/Pasted%20image%2020231024231415.png)
+
 # Deploy Clash in OpenWRT
 ## 1.config dns and region
 
