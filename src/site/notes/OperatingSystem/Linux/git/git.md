@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/OperatingSystem/Linux/git/git/","noteIcon":"","created":"","updated":""}
+{"dg-publish":true,"permalink":"/OperatingSystem/Linux/git/git/","noteIcon":"3"}
 ---
 
 ## 校验
@@ -21,6 +21,20 @@ git submodule add giturl path-to-existedfolder/your-favor-repository-name
 ```bash
 git submodule init 
 git submodule update --recursive
+```
+对于一个包含子模块的仓库，如果在本地子模块和本仓库都进行了修改，需要进行以下操作进行同步子模块的本仓库
+
+```bash
+cd path/to/submodule
+git add -A
+git commit -m "submodule commit"
+git push
+cd path/to/base
+git add -A
+git add path/to/submodule # 更新base索引的子模块的最新commit
+git commit -m "base commit and update submodule"
+git push
+
 ```
 
 ## 日志
