@@ -55,6 +55,8 @@ So we can only edit the opemwrt vm conf in pve shell
 
 ## 6.配置局域网域名解析
 #dnsmasq
+references:
+https://openwrt.org/docs/guide-user/base-system/dhcp.dnsmasq
 对于我们局域网内的服务，为了能在网页直接输入域名而非ip进入服务，我们可以利用openwrt来进行静态域名和ip绑定
 首先在openwrt的hosts文件指定局域网内部主机名
 
