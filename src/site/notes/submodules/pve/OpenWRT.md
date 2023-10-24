@@ -57,13 +57,13 @@ So we can only edit the opemwrt vm conf in pve shell
 #dnsmasq
 references:
 https://openwrt.org/docs/guide-user/base-system/dhcp.dnsmasq
-对于我们局域网内的服务，为了能在网页直接输入域名而非ip进入服务，我们可以利用openwrt来进行静态域名和ip绑定
+对于我们局域网内的服务，为了能在网页直接输入域名而非ip进入服务，我们可以利用openwrt和dnsmasq来进行静态域名和ip绑定
 首先在openwrt的hosts文件指定局域网内部主机名
 
 ```bash
 # 这里只用openwrt的服务举例
 192.168.66.100 openwrt
-```
+![Pasted image 20231024232907.png](app://54cfc47ada3a33b97e8c13b83fa8976748ae/Users/daniel/code/blog/Pasted%20image%2020231024232907.png?1698161347355)```
 然后在/etc/dnsmasq.conf中指定局域网内部域名后缀
 默认情况下，Dnsmasq配置为将主机放入.lan域。
 
@@ -72,6 +72,8 @@ local=/lan/
 domain=lan
 ```
 
+对应dnsmasq其他指定域名的可以参考
+![Pasted image 20231024232907.png|undefined](/img/user/pics/Pasted%20image%2020231024232907.png)
 配置完之后可以直接重载dnsmasq
 
 ```bash
