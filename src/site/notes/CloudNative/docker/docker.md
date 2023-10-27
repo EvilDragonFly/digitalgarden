@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/CloudNative/docker/docker/","noteIcon":"","created":"","updated":""}
+{"dg-publish":true,"permalink":"/CloudNative/docker/docker/","noteIcon":"3"}
 ---
 
 #docker
@@ -7,10 +7,10 @@
 docker和maven，npm类似，代理和系统代理不一样需要单独配置，具体配置参考[docker docs](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
 关于docker的配置代理的文件主要是两个，可以根据需要编辑其中一个或者两个一起
 /etc/docker/daemon.json
-![Pasted image 20230922224955.png](/img/user/pics/Pasted%20image%2020230922224955.png)
+![Pasted image 20230922224955.png|undefined](/img/user/pics/Pasted%20image%2020230922224955.png)
 /etc/systemd/system/docker.service.d/http-proxy.conf
 
-![Pasted image 20230922225041.png](/img/user/pics/Pasted%20image%2020230922225041.png)
+![Pasted image 20230922225041.png|undefined](/img/user/pics/Pasted%20image%2020230922225041.png)
 编辑添加代理之后可以通过以下命令生效并查看是否成功生效
 
 ```bash
@@ -18,7 +18,7 @@ systemctl daemon-reload
 systemctl restart docker
 systemctl show --property=Environment docker
 ```
-
+其中daemon.json的方式只能docker高版本支持(23.0以上)
 ## 2. Dockerfile的编写
 ```bash
 ARG base=debian:v0  # 指定基础镜像，给出默认值，可以从docker build指定值覆盖
