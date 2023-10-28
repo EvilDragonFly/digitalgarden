@@ -26,7 +26,7 @@ python setup.py install
 
 ```
 
-![Pasted image 20231028220804.png|50%](/img/user/pics/Pasted%20image%2020231028220804.png)
+![Pasted image 20231028220804.png|80%](/img/user/pics/Pasted%20image%2020231028220804.png)
 基于当前环境配置安装pip包
 
 ```bash
