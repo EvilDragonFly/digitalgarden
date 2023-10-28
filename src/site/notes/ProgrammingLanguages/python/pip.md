@@ -1,9 +1,9 @@
 ---
-{"dg-publish":true,"permalink":"/ProgrammingLanguages/python/pip/","noteIcon":"","created":"","updated":""}
+{"dg-publish":true,"permalink":"/ProgrammingLanguages/python/pip/","noteIcon":"3"}
 ---
 
 #python/pip
-pip常用命令
+### pip常用命令
 
 ```bash
 pip show rich # 显示当前已安装包的信息
@@ -46,3 +46,38 @@ pip下载包到本地
 pip download megatron==0.1 .
 
 ```
+
+### conda复用环境
+#### 在线安装方式
+**创建一个新的Python 3.8环境：** 首先，在Conda中创建一个新的Python 3.8环境。你可以使用以下命令来创建一个名为`py38env`的环境：
+
+- `conda create --name py38env python=3.8`
+    
+- **激活新环境：** 激活新创建的Python 3.8环境：
+    
+- `conda activate py38env`
+- **复制包列表：** 现在，你需要从Python 3.7环境中导出已安装包的列表。可以使用以下命令导出包列表：
+- `conda list --export > package_list.txt`
+
+- **安装包到新环境：** 使用以下命令，将导出的包列表安装到新的Python 3.8环境中：   
+
+`conda install --name py38env --file package_list.txt`
+
+这将安装与Python 3.7环境相同的包到新的Python 3.8环境中，可能存在部分包不支持3.8，需要手动升级了
+#### 离线拷贝方式
+**通过硬链接复制已安装的包：**
+
+1. 首先，在Python 3.8环境中创建一个新的虚拟环境（如果尚未创建），并激活它：
+- `conda create --name py38env python=3.8 
+   `conda activate py38env` 
+- 找到Python 3.7环境中的`site-packages`目录，这是已安装包的位置。你可以使用以下命令查找它：
+- `conda list --name py37env`
+    查找输出中的 `site-packages` 目录。
+- 切换到Python 3.8环境，然后创建硬链接以复制Python 3.7环境中的包到Python 3.8环境。假设你找到的`site-packages`目录是 `/path/to/py37env/lib/python3.7/site-packages`，可以使用以下命令：
+	`ln -s /path/to/py37env/lib/python3.7/site-packages/* /path/to/py38env/lib/python3.8/site-packages/` 
+- 这会在Python 3.8环境中创建硬链接到Python 3.7环境中的包。 
+- 验证已经复制了包，你可以运行以下命令检查：
+
+ `conda list --name py38env` 
+这将显示已经安装的包列表。
+这种方法可以帮助你在不重新下载包的情况下复用Python 3.7环境中的包到Python 3.8环境中。然而，要注意的是硬链接可能会在不同的环境之间引入一些潜在问题，因此在执行此操作之前请谨慎考虑。确保你理解这种方法可能带来的潜在风险。
