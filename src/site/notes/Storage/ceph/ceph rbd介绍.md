@@ -30,7 +30,7 @@ ImageDispatchLayer
 ObjectDispatchLayer
 
 ## Threads Model
-![Pasted image 20231019002342.png|undefined](/img/user/pics/Pasted%20image%2020231019002342.png)
+![Pasted image 20231019002342.png|100%](/img/user/pics/Pasted%20image%2020231019002342.png)
 
 ## Librados/librbd Call Example
 - FIO example
@@ -45,7 +45,7 @@ ObjectDispatchLayer
 
 
 ## SPDK RBD bdev
-![Pasted image 20231019131329.png|undefined](/img/user/pics/Pasted%20image%2020231019131329.png)
+![Pasted image 20231019131329.png|100%](/img/user/pics/Pasted%20image%2020231019131329.png)
 
 Call stack of unshared threads
 
