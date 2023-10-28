@@ -21,9 +21,12 @@ editable project
 
 ```bash
 pip install -e .
+# or
+python setup.py install
 
 ```
 
+![Pasted image 20231028220804.png|undefined](/img/user/pics/Pasted%20image%2020231028220804.png)
 基于当前环境配置安装pip包
 
 ```bash
