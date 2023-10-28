@@ -137,7 +137,7 @@ go to openclash and download clash rule file
 we can see all the aviable proxy node
 ![Pasted image 20230711215607.png|90%](/img/user/submodules/pve/pics/Pasted%20image%2020230711215607.png)
 
-use one node which area bing is not blocked
+use one node where bing is not blocked
 ![Pasted image 20230711215746.png|90%](/img/user/submodules/pve/pics/Pasted%20image%2020230711215746.png)
 click apply setting.
 now go into clash yacd web and check if the new rule is working
