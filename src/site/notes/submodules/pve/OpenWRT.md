@@ -73,7 +73,7 @@ domain=lan
 ```
 
 对应dnsmasq其他指定域名的可以参考
-![Pasted image 20231024232907.png|undefined](/img/user/pics/Pasted%20image%2020231024232907.png)
+![Pasted image 20231024232907.png|100%](/img/user/pics/Pasted%20image%2020231024232907.png)
 配置完之后可以直接重载dnsmasq
 
 ```bash
