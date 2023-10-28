@@ -19,7 +19,7 @@ execute command
 ```sh
 qm importdisk 100 /var/lib/vz/template/iso/openwrt-22.03.4-x86-64-generic-ext4-combined-efi.img local-lvm
 ```
-![Pasted image 20230428131243.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020230428131243.png)
+![Pasted image 20230428131243.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428131243.png)
 
 set disk
 ![Pasted image 20230428131440.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428131440.png)
@@ -29,16 +29,16 @@ adjust boot order and make sata0 the first one to be booted
 
 ## 3.add a linux bridge for openWRT
 before we add bridge, network configuration is like this below:
-![Pasted image 20230427235816.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020230427235816.png)
+![Pasted image 20230427235816.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230427235816.png)
 
 after we add a network bridge on bond0
-![Pasted image 20230428224131.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020230428224131.png)
+![Pasted image 20230428224131.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428224131.png)
 start the openwrt vm and modify ip in /etc/config/network
-![Pasted image 20230428224209.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020230428224209.png)
+![Pasted image 20230428224209.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428224209.png)
 
 ## 4.make openwrt use the bridge on bond0, so our laptop, ipad can be in the same network with openwrt.
 proxmox web cannot detect what a bridge on a bond is
-![Pasted image 20230428224416.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020230428224416.png)
+![Pasted image 20230428224416.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428224416.png)
 
 Add we cannot edit the network device of openwrt in proxmox web to switch the base device from vmbr0 to br0.
 
@@ -46,7 +46,7 @@ Add we cannot edit the network device of openwrt in proxmox web to switch the ba
 
 
 So we can only edit the opemwrt vm conf in pve shell
-![Pasted image 20230428224754.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020230428224754.png)
+![Pasted image 20230428224754.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428224754.png)
 
 ##  5.login openwrt
 ![Pasted image 20230428224925.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428224925.png)
@@ -108,7 +108,7 @@ apply the change
 
 check change in openwrt shell
 
-![Pasted image 20230428232852.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020230428232852.png)
+![Pasted image 20230428232852.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428232852.png)
 
 now we can ping baidu.com in the openwrt shell
 
