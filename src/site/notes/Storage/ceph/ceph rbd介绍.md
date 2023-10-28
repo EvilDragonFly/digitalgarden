@@ -49,5 +49,5 @@ ObjectDispatchLayer
 
 Call stack of unshared threads
 
-![Pasted image 20231019131348.png|undefined](/img/user/pics/Pasted%20image%2020231019131348.png)
+![Pasted image 20231019131348.png|100%](/img/user/pics/Pasted%20image%2020231019131348.png)
 Call stack of shared threads
