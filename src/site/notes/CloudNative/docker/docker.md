@@ -7,10 +7,10 @@
 docker和maven，npm类似，代理和系统代理不一样需要单独配置，具体配置参考[docker docs](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
 关于docker的配置代理的文件主要是两个，可以根据需要编辑其中一个或者两个一起
 /etc/docker/daemon.json
-![Pasted image 20230922224955.png|undefined](/img/user/pics/Pasted%20image%2020230922224955.png)
+![Pasted image 20230922224955.png|100%](/img/user/pics/Pasted%20image%2020230922224955.png)
 /etc/systemd/system/docker.service.d/http-proxy.conf
 
-![Pasted image 20230922225041.png|undefined](/img/user/pics/Pasted%20image%2020230922225041.png)
+![Pasted image 20230922225041.png|100%](/img/user/pics/Pasted%20image%2020230922225041.png)
 编辑添加代理之后可以通过以下命令生效并查看是否成功生效
 
 ```bash
