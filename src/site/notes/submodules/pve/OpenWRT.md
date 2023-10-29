@@ -3,6 +3,7 @@
 ---
 
 #network/openwrt #network/clash #network/proxy
+![jess-bailey-l3N9Q27zULw-unsplash.jpg|100%](/img/user/banner/jess-bailey-l3N9Q27zULw-unsplash.jpg)
 # Deploy OpenWRT
 ## 1.upload openwrt img file to pve
 you can upload from pve web or download can put to /var/lib/vz/template/iso/
