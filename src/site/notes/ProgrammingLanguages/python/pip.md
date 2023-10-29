@@ -3,6 +3,7 @@
 ---
 
 #python/pip
+![freestocks-flOVXZWbjJ4-unsplash.jpg|100%](/img/user/banner/freestocks-flOVXZWbjJ4-unsplash.jpg)
 ### pip常用命令
 
 ```bash
