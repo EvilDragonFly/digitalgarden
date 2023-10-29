@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/CloudNative/deploy virtual machine/","noteIcon":"3"}
 ---
 
-![alessandro-armignacco-UATaDiqcmV0-unsplash.jpg|undefined](/img/user/banner/alessandro-armignacco-UATaDiqcmV0-unsplash.jpg)
+![alessandro-armignacco-UATaDiqcmV0-unsplash.jpg|100%](/img/user/banner/alessandro-armignacco-UATaDiqcmV0-unsplash.jpg)
 #virsh #virt-install 
 ## create vm
 基于已有虚拟机的qcow2镜像文件创建虚拟机
