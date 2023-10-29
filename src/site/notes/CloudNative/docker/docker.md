@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/CloudNative/docker/docker/","noteIcon":"3"}
 ---
 
-![timo-stern-EvcUtLF12XQ-unsplash.jpg|undefined](/img/user/banner/timo-stern-EvcUtLF12XQ-unsplash.jpg)
+![timo-stern-EvcUtLF12XQ-unsplash.jpg|100%](/img/user/banner/timo-stern-EvcUtLF12XQ-unsplash.jpg)
 #docker
 ## 1. docker的代理
 docker和maven，npm类似，代理和系统代理不一样需要单独配置，具体配置参考[docker docs](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
