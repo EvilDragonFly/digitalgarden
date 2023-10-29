@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/Storage/ceph/ceph rbd介绍/","noteIcon":"3"}
 ---
 
+![paul-pastourmatzis-hKOPVtGQZ4o-unsplash.jpg|100%](/img/user/banner/paul-pastourmatzis-hKOPVtGQZ4o-unsplash.jpg)
 reference articles:
 https://www.intel.com/content/www/us/en/developer/articles/technical/performance-tuning-of-ceph-rbd.html
 https://www.youtube.com/watch?v=UjpaZ-JH4Yo
