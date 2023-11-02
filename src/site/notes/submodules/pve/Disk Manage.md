@@ -36,7 +36,7 @@ lvextend -r -l +100%FREE /dev/pve/data
 ```
 
 以上是针对lvm进行扩容，对于挂载在物理分区上的文件系统，比如根目录，如果需要进行扩容，需要按一下操作
-![Pasted image 20231102015046.png|undefined](/img/user/pics/Pasted%20image%2020231102015046.png)
+![Pasted image 20231102015046.png|90%](/img/user/pics/Pasted%20image%2020231102015046.png)
 对于根目录所在的分区所在的磁盘
 
 ```bash
