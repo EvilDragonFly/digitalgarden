@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/ProgrammingLanguages/shell/shell脚本的一些tricks/","noteIcon":"3","created":"","updated":""}
+{"dg-publish":true,"permalink":"/ProgrammingLanguages/shell/shell脚本的一些tricks/","noteIcon":"3"}
 ---
 
 #shell
@@ -34,8 +34,15 @@ tar cf - $path | pv -s $(du -sb $path|awk '{print $1}') | gzip > file.tar.gz
 ```
 
 #file
-3.查找大文件
+3.查找文件
+#find #file
+[参考](https://www.myfreax.com/find-large-files-in-linux/)
+
 ```shell
+# 查找大文件
 find . -xdev -type f -size +100M -print | xargs ls -lh | \
 sort -k5,5 -h -r | head
+# 查看文件夹内文件个数
+find . -type f |wc -l
+tree | tail -1
 ```
