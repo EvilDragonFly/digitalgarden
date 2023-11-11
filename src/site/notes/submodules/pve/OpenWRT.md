@@ -92,7 +92,21 @@ domain=lan
 secret可在openclash查看
 ![Pasted image 20231024231127.png|100%](/img/user/pics/Pasted%20image%2020231024231127.png)]
 这里的密钥可以在Config Magager里面的yaml文件的secret字段进行配置
-![Pasted image 20231024231415.png|100%](/img/user/pics/Pasted%20image%2020231024231415.png)]
+![Pasted image 20231024231415.png|100%](/img/user/pics/Pasted%20image%2020231024231415.png)
+
+>我在一个lxc内部署了很多的容器，有calibre，个人多媒体中心，每个容器都有对应一个网页服务，且端口不是一样的，但是所在的ip都是这个lxc分配的ip，为了在浏览器登录的时候不需要输入domain:port的方式登录具体的服务，尝试使用不同的domain映射到同一个ip上的不同的端口
+关于实现这个功能，牵涉到reverse proxy:
+
+
+```cardlink
+url: https://forum.openwrt.org/t/using-domain-name-instead-of-ip-port/158811/18
+title: "Using domain name instead of ip:port"
+description: "lighttpd documentation      As others have noted, you need to configure DNS for domain names.  If you configure DNS with  myrouter.com 192.168.10.1  mycloud.com 192.168.10.1  then you can configure lighttpd to respond to them separately  $SERVER[\"socket\"] == \":80\" {     $HTTP[\"host\"] == \"mycloud.com\" {         ...     }     #else {     #    ...     #} } $SERVER[\"socket\"] == \":81\" {     $HTTP[\"host\"] == \"myrouter.com\" {         ...     }     #else {     #    ...     #} }  lighttpd will still be l..."
+host: forum.openwrt.org
+favicon: https://forum.openwrt.org/uploads/default/optimized/3X/0/b/0be226be0af76ed16c229fa402d72b8a7f7266d5_2_32x32.png
+image: https://forum.openwrt.org/uploads/default/original/3X/2/9/2965b316403db302c535cae40139e8c49bbad6e3.png
+```
+![Pasted image 20231111220949.png|undefined](/img/user/Pasted%20image%2020231111220949.png)
 
 # Deploy Clash in OpenWRT
 ## 1.config dns and region
