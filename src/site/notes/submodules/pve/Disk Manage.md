@@ -38,11 +38,13 @@ lvextend -r -l +100%FREE /dev/pve/data
 以上是针对lvm进行扩容，对于挂载在物理分区上的文件系统，比如根目录，如果需要进行扩容，需要按一下操作
 ![Pasted image 20231102015046.png|90%](/img/user/pics/Pasted%20image%2020231102015046.png)
 对于根目录所在的分区所在的磁盘
-
+对于新建磁盘不能删除ext4 signature?
+![Pasted image 20231114015112.png|undefined](/img/user/Pasted%20image%2020231114015112.png)
 ```bash
 fdisk /dev/sda
 #删除根目录所在分区及后面的分区
 #创建新分区，新分区的范围应为根目录所在的起始位置加上盘的最终位置
+## 需要注意新建分区必须起始位置对齐，最终位置需要不小于之前的结尾，不然保存修改之后reboot会导致系统不可逆的崩溃
 #保存修改之后
 partprobe /dev/sda
 df -Th
@@ -51,6 +53,8 @@ reboot
 
 ```
 
+根目录扩展到新加的逻辑卷
+![Pasted image 20231114000739.png|undefined](/img/user/Pasted%20image%2020231114000739.png)
 ## Related posts
 [resize partition](https://www.ibm.com/docs/en/cloud-pak-system-w3550/2.3.3?topic=images-extending-partition-file-system-sizes)
 
