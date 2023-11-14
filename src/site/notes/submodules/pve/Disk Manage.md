@@ -40,7 +40,7 @@ lvextend -r -l +100%FREE /dev/pve/data
 对于根目录所在的分区所在的磁盘![Pasted image 20231102015046.png|undefined](/img/user/pics/Pasted%20image%2020231102015046.png)
 对于新建磁盘不能删除ext4 signature?
 ![Pasted image 20231115002235.png|undefined](/img/user/Pasted%20image%2020231115002235.png)
-[openwrt扩容](https://blog.csdn.net/ls0111/article/details/128769859)
+[openwrt extend disk](https://blog.csdn.net/ls0111/article/details/128769859)
 ![Pasted image 20231115014303.png|undefined](/img/user/Pasted%20image%2020231115014303.png)
 
 ```bash
