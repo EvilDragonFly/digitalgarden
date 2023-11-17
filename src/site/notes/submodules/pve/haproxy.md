@@ -5,7 +5,9 @@
 
 #proxy #reverseproxy #haproxy
 ### dns加上haproxy主要流程
-对于客户端浏览器输入的域名最终需要经过openwrt(我们设置的gateway和dns服务器)，openwrt中的dnsmasq(openclash的角色?是否冲突)服务会进行解析域名，这里通信使用的是默认的dns端口53，我们需要dnsmasq先将这些域名都统一解析到我们的reverse proxy服务器上，也就是安装好haproxy的服务器上，然后在haproxy的规则再对于这些域名进行分流到指定的后端服务器的后端服务上(后端服务器:服务监听端口)
+对于客户端浏览器输入的域名最终需要经过openwrt(我们设置的gateway和dns服务器)，openwrt中的dnsmasq(openclash的角色?是否冲突)服务会进行解析域名，这里通信使用的是默认的dns端口53，我们需要dnsmasq先将这些域名都统一解析到我们的reverse proxy服务器上，也就是安装好haproxy的服务器上，然后在haproxy的规则再对于这些域名进行分流到指定的后端服务器的后端服务上(后端服务器ip:服务监听端口)
+openclash配置之后客户端的gateway设置成openclash的机器就行，dns不需要设置成为openclash机器ip?
+
 
 haproxy配置参考
 
