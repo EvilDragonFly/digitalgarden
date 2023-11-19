@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/submodules/pve/Disk Manage/","noteIcon":"3"}
 ---
 
+![Pasted image 20231119154239.png|100%](/img/user/Pasted%20image%2020231119154239.png)
 #storage/disk #lvs #pvs #extend
 I give a small size to proxmox when a install it, which make the local-lvm size not enough to create many vm and store iso. So I need to extend the local-lvm to the full size of my os disk.
 ## 1. Extend the partition
@@ -39,9 +40,9 @@ lvextend -r -l +100%FREE /dev/pve/data
 ![Pasted image 20231102015046.png|90%](/img/user/pics/Pasted%20image%2020231102015046.png)
 对于根目录所在的分区所在的磁盘![Pasted image 20231102015046.png|undefined](/img/user/pics/Pasted%20image%2020231102015046.png)
 对于新建磁盘不能删除ext4 signature?
-![Pasted image 20231115002235.png|undefined](/img/user/Pasted%20image%2020231115002235.png)
+![Pasted image 20231115002235.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020231115002235.png)
 [openwrt extend disk](https://blog.csdn.net/ls0111/article/details/128769859)
-![Pasted image 20231115014303.png|undefined](/img/user/Pasted%20image%2020231115014303.png)
+![Pasted image 20231115014303.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020231115014303.png)
 
 ```bash
 fdisk /dev/sda
@@ -57,7 +58,7 @@ reboot
 ```
 
 根目录扩展到新加的逻辑卷
-![Pasted image 20231114000739.png|undefined](/img/user/Pasted%20image%2020231114000739.png)
+![Pasted image 20231114000739.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020231114000739.png)
 ## Related posts
 [resize partition](https://www.ibm.com/docs/en/cloud-pak-system-w3550/2.3.3?topic=images-extending-partition-file-system-sizes)
 
