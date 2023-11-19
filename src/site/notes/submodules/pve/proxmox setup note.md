@@ -1,9 +1,10 @@
 ---
-{"dg-publish":true,"permalink":"/submodules/pve/proxmox setup note/","noteIcon":""}
+{"dg-publish":true,"permalink":"/submodules/pve/proxmox setup note/","noteIcon":"3"}
 ---
 
 #deploy #pve
 
+![Pasted image 20231119161843.png|100%](/img/user/Pasted%20image%2020231119161843.png)
 ## 1. use rufus to make a boot usb from a installed proxmox iso
 
 ## 2. start the machine and press del to get into bios,  set usb as the most prority device to load os
@@ -106,7 +107,7 @@ finallly we use pwmconfig to config the options for fancontrol
 > pwmconfig
 
 make sure it87 module it loaded before fancontrol service startup
-![Pasted image 20230423224402.png](/img/user/submodules/pve/pics/Pasted%20image%2020230423224402.png)
+![Pasted image 20230423224402.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020230423224402.png)
 
 
 
