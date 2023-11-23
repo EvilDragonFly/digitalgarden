@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/CodeSnippets/loss绘图新版/","noteIcon":"3"}
 ---
 
+
+
 ```python
 from matplotlib import rcParams
 import matplotlib.pyplot as plt
