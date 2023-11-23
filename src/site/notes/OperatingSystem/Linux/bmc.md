@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/OperatingSystem/Linux/bmc/","noteIcon":"","created":"","updated":""}
+{"dg-publish":true,"permalink":"/OperatingSystem/Linux/bmc/","noteIcon":"3"}
 ---
 
 - What is it?
