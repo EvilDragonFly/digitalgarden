@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/OperatingSystem/Linux/packages/rpm/","noteIcon":"","created":"","updated":""}
+{"dg-publish":true,"permalink":"/OperatingSystem/Linux/packages/rpm/","noteIcon":"3"}
 ---
 
 #rpm #yum
@@ -50,6 +50,12 @@ yum install libtirpc-gen --downloadonly --destdir .
 #使用yum-utils中的命令
 yumdownloader package_name
 
+```
+
+rpm包解压到本地
+
+```bash
+rpm2cpio xxx.rpm | cpio -div
 ```
 
 
