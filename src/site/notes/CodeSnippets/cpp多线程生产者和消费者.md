@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/CodeSnippets/cpp多线程生产者和消费者/","noteIcon":"3","created":"","updated":""}
+{"dg-publish":true,"permalink":"/CodeSnippets/cpp多线程生产者和消费者/","noteIcon":"3"}
 ---
 
 
