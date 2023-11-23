@@ -76,6 +76,7 @@ virsh attach-device <domain> /dev/rbd/<pool>/<image> <target> --driver=rbd --sub
 ```
 
 ## 直通网卡
+#passthrough
 首先确保直通的物理网卡是正常可以up，否者透传之后功能异常
 ### method 1
 1. 首先确定iommu是否enabled, bios vt-d是否开启
