@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/ProgrammingLanguages/cpp/cpp-concurrency/C++ Concurrency in Action Notes/","noteIcon":""}
+{"dg-publish":true,"permalink":"/ProgrammingLanguages/cpp/cpp-concurrency/C++ Concurrency in Action Notes/","noteIcon":"3"}
 ---
 
 # 1. Hello, world of concurrency in C++!
@@ -8,7 +8,7 @@ task switching vs hardware concurrecny
 
  上下文切换：操作系统保存当前任务的状态和指令指针，准备好需要切换的任务，加载该任务的cpu state和指令和数据所需的memory到cache
  以下灰色的部分代表的是context switch导致的cpu delay
-![Pasted image 20230226215638.png](/img/user/ProgrammingLanguages/cpp/cpp-concurrency/pics/Pasted%20image%2020230226215638.png)
+![Pasted image 20230226215638.png|undefined](/img/user/ProgrammingLanguages/cpp/cpp-concurrency/pics/Pasted%20image%2020230226215638.png)
 process and thread
 thread可以类比于一个developer，process可以类比于一个office，内部可以有一个或者多个developer，有developer需要的manual等一些resource
 one thread per process vs multiple threads per process
