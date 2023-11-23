@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/OperatingSystem/Linux/symbol/","noteIcon":"","created":"","updated":""}
+{"dg-publish":true,"permalink":"/OperatingSystem/Linux/symbol/","noteIcon":"3"}
 ---
 
 ## nm
