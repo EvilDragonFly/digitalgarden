@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/OperatingSystem/Linux/FileSystem/Permission/","noteIcon":"3"}
 ---
 
-![timon-studler-sjynUnr9ikA-unsplash.jpg|undefined](/img/user/banner/timon-studler-sjynUnr9ikA-unsplash.jpg)
+![timon-studler-sjynUnr9ikA-unsplash.jpg|100%](/img/user/banner/timon-studler-sjynUnr9ikA-unsplash.jpg)
 ### 1. 一般linux的默认umask为022，创建的文件默认没有执行权限
 如下图，创建的folder的权限为777-022=755，创建的file的权限为666-022=644
 ![Pasted image 20230913224224.png|100%](/img/user/pics/Pasted%20image%2020230913224224.png)
