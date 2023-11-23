@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/CodeSnippets/获取存储进程当前iops/","noteIcon":"3","created":"","updated":""}
+{"dg-publish":true,"permalink":"/CodeSnippets/获取存储进程当前iops/","noteIcon":"3"}
 ---
 
 #shell/numfmt
