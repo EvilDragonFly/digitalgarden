@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/submodules/pve/Disk Manage/","noteIcon":"3"}
 ---
 
-![Pasted image 20231119154239.png|100%](/img/user/Pasted%20image%2020231119154239.png)
+![Pasted image 20231119154239.png|100%](/img/user/pics/Pasted%20image%2020231119154239.png)
 #storage/disk #lvs #pvs #extend
 I give a small size to proxmox when a install it, which make the local-lvm size not enough to create many vm and store iso. So I need to extend the local-lvm to the full size of my os disk.
 ## 1. Extend the partition
