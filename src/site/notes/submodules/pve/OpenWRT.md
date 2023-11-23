@@ -55,6 +55,7 @@ So we can only edit the opemwrt vm conf in pve shell
 
 
 ## 6.配置局域网域名解析
+### 6.1 openwrt.lan访问
 #dnsmasq
 references:
 https://openwrt.org/docs/guide-user/base-system/dhcp.dnsmasq
@@ -82,15 +83,15 @@ domain=lan
 /etc/init.d/dnsmasq reload
 ```
 
-然后我们直接网页访问openwrt.lan就可以志杰访问我们192.168.66.100上的openwrt网页
+然后我们直接网页访问openwrt.lan就可以直接访问我们192.168.66.100上的openwrt网页
 ![Pasted image 20231024223051.png|100%](/img/user/pics/Pasted%20image%2020231024223051.png)
 
 通过域名登录openwrt然后登录openclash服务，如何想要打开openclash的yacd面板的话需要输入secret(直接使用ip的话可以不用secret)
 如下图我们可以看到登录dashboard的地址由external-controller指定
-![Pasted image 20231024230642.png|100%](/img/user/pics/Pasted%20image%2020231024230642.png)]
+![Pasted image 20231024230642.png|100%](/img/user/pics/Pasted%20image%2020231024230642.png)
 如果使用域名登录的话，需要add对应的ip:端口，然后填写secret登录
 secret可在openclash查看
-![Pasted image 20231024231127.png|100%](/img/user/pics/Pasted%20image%2020231024231127.png)]
+![Pasted image 20231024231127.png|100%](/img/user/pics/Pasted%20image%2020231024231127.png)
 这里的密钥可以在Config Magager里面的yaml文件的secret字段进行配置
 ![Pasted image 20231024231415.png|100%](/img/user/pics/Pasted%20image%2020231024231415.png)
 
@@ -106,16 +107,29 @@ host: forum.openwrt.org
 favicon: https://forum.openwrt.org/uploads/default/optimized/3X/0/b/0be226be0af76ed16c229fa402d72b8a7f7266d5_2_32x32.png
 image: https://forum.openwrt.org/uploads/default/original/3X/2/9/2965b316403db302c535cae40139e8c49bbad6e3.png
 ```
-![Pasted image 20231111220949.png|undefined](/img/user/Pasted%20image%2020231111220949.png)
+![Pasted image 20231111220949.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020231111220949.png)
+### 6.2 lxc上多个service通过反向代理配置域名访问
+openwrt的磁盘是从之前的img文件导入制备的，空间只有124M，我们这里先将openwrt对应的lvm进行扩容，以备后面使用
+![Pasted image 20231112222405.png|undefined](/img/user/submodules/pve/pics/Pasted%20image%2020231112222405.png)
+首先openwrt需要下载haproxy, openwrt下载软件前需要先更新available list，因为这些可下载包都存在memory中，reboot之后想要在网页看到需要先update
+
+```bash
+opkg update
+opkg list|grep haproxy
+opkg install haproxy
+/etc/init.d/haproxy status
+
+```
 
 # Deploy Clash in OpenWRT
 ## 1.config dns and region
 
-![Pasted image 20230428231323.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428231323.png)]
+![Pasted image 20230428231323.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428231323.png)
 
 ![Pasted image 20230428232919.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428232919.png)
 
-![Pasted image 20230428232548.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428232548.png)
+![Pasted image 20231118031258.png|undefined](/img/user/pics/Pasted%20image%2020231118031258.png)
+
 
 ![Pasted image 20230428232951.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230428232951.png)
 
@@ -131,8 +145,8 @@ now we can ping baidu.com in the openwrt shell
 ![Pasted image 20230429003130.png|100%](/img/user/submodules/pve/pics/Pasted%20image%2020230429003130.png)
 
 ## 2.download clash
-
-![open clash for openwrt](https://github.com/vernesong/OpenClash)
+openclash依赖dnsmasq-full，默认的openwrt镜像内已经包含dnsmasq，我们需要先remove dnsmasq防止冲突
+[open clash for openwrt](https://github.com/vernesong/OpenClash)
 
 after install openclash, reboot
 add clash subcription
