@@ -34,7 +34,7 @@ tar cf - $path | pv -s $(du -sb $path|awk '{print $1}') | gzip > file.tar.gz
 ```
 
 #file
-3.查找文件
+### 3.查找文件
 #find #file
 [参考](https://www.myfreax.com/find-large-files-in-linux/)
 
@@ -46,3 +46,22 @@ sort -k5,5 -h -r | head
 find . -type f |wc -l
 tree | tail -1
 ```
+
+### 4. 使用alias
+#alias #shopt
+
+```bash
+#一些软件安装是直接拉取指定链接文件直接本地执行，这些脚本文件中可能会使用wget和curl来拉取依赖
+#这些工具可能会存在ssl认证的问题，为了能顺利执行，我们可以将脚本拉取到本地，在脚本内第一行使用alias
+# 第一行务必使用shopt开启alias展开。。
+shopt -s expand_aliases
+alias curl='curl -k'
+alias wget='wget --no-check-certificate'
+
+```
+
+### 6. 常见函数
+
+
+
+8. 
