@@ -2,8 +2,9 @@
 {"dg-publish":true,"permalink":"/OperatingSystem/Linux/rwlock和spinlock实现/","noteIcon":"3"}
 ---
 
+#spinlock #lock #sparse
 一下源码分析基于linux 6.6.1
-sparce
+sparse
 https://lwn.net/Articles/689907/
 
 ```cpp
@@ -44,7 +45,7 @@ include/linux/rwlock.h
 ```
 
 include/linux/compiler_types.h
-这里的\_\_context\_\_还有\_\_attribute\_\_((context(x,1,1)))为sparse实现，主要功能是操作context的引用计数
+这里的`__context__还有__attribute__`((context(x,1,1)))为sparse实现，主要功能是操作context的引用计数
 ```cpp
 /* context/locking */
 
@@ -90,82 +91,12 @@ struct lockdep_map dep_map;
 ```
 
 ## spinlock
-arch/arm/include/asm/spinlock_types.h
-```cpp
-typedef struct {
-
-union {
-
-u32 slock;
-
-struct __raw_tickets {
-
-#ifdef __ARMEB__
-
-u16 next;
-
-u16 owner;
-
-#else
-
-u16 owner;
-
-u16 next;
-
-#endif
-
-} tickets;
-
-};
-
-} arch_spinlock_t;
-
-```
-
-arch/arm/include/asm/spinlock.h
-```cpp
-static inline void arch_spin_lock(arch_spinlock_t *lock)
-
-{
-unsigned long tmp;
-u32 newval;
-arch_spinlock_t lockval; 
-prefetchw(&lock->slock);
-__asm__ __volatile__(
-
-"1: ldrex %0, [%3]\n"
-
-" add %1, %0, %4\n"
-
-" strex %2, %1, [%3]\n"
-
-" teq %2, #0\n"
-
-" bne 1b"
-
-: "=&r" (lockval), "=&r" (newval), "=&r" (tmp)
-
-: "r" (&lock->slock), "I" (1 << TICKET_SHIFT)
-
-: "cc");
-
-  
-
-while (lockval.tickets.next != lockval.tickets.owner) {
-
-wfe();
-
-lockval.tickets.owner = READ_ONCE(lock->tickets.owner);
-
-}
-
-  
-
-smp_mb();
-
-}
-
-```
+spinlock的实现类似于银行业务办理系统，每个客户来办理业务的时候需要先取号，之后等银行叫号再到指定柜台办理业务。
+arch_rwlock_t结构体内的owner表示当前可持有lock的线程，next表示下一个线程拿到的号码,系统内部有一个全局的arch_rwlock_t来来显示当前作业系统的状态
+![Pasted image 20231205001443.png|undefined](/img/user/Pasted%20image%2020231205001443.png)
+arch_spin_lock实现
+每一个想要作业的线程需要先同步一份系统的arch_rwlock_t到本地,系统的next会+1，表示下一个线程拿到的号码，在线程拿到号码之后会不定时的更新本地记忆的owner，直到owner等于拿到的号码牌就获取lock得到执行权
+![Pasted image 20231205001331.png|undefined](/img/user/Pasted%20image%2020231205001331.png)
 以上汇编代码简化成cpp功能如下
 
 ```cpp
@@ -181,3 +112,15 @@ static inline void arch_spin_lock(arch_spinlock_t *lock) {
     }
 } 
 ```
+
+## arch_write_trylock的实现
+这里使用AT&T格式的基于arm指令集的assembly language code snippet，
+这里的%0是contended，%1是res，基于asm申明的变量occur order，其中
+=r  constraint indicates that %0 (result) is an output operand, By adding & to the constraint, we are indicating that %0 is early-clobbered.
+The `ldrex` and `strexeq` instructions are part of ARM's exclusive access instructions, which provide a way to perform atomic read-modify-write operations.
+这里进程想要持有写锁需要确认当前lock的是否被占用(如果lock=0，则没有被占用)，如果没有被占用直接先将lock值设置成0x80000000，然后就执行smp_mb
+**`smp_mb();`**: This is a memory barrier, which ensures that all memory operations before the barrier are completed before any memory operations after the barrier. Memory barriers are used to control the order of memory accesses and ensure proper synchronization.
+
+![Pasted image 20231205013902.png|undefined](/img/user/Pasted%20image%2020231205013902.png)
+
+![Pasted image 20231205015339.png|undefined](/img/user/Pasted%20image%2020231205015339.png)
