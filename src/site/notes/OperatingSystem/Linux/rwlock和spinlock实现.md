@@ -124,3 +124,6 @@ The `ldrex` and `strexeq` instructions are part of ARM's exclusive access instru
 ![Pasted image 20231205013902.png|undefined](/img/user/Pasted%20image%2020231205013902.png)
 
 ![Pasted image 20231205015339.png|undefined](/img/user/Pasted%20image%2020231205015339.png)
+
+对于arch_write_trylock的实现arm架构由于有asm代码比较难懂，可参考arc架构的相关实现，原理基本类似的
+![Pasted image 20231205015621.png|undefined](/img/user/Pasted%20image%2020231205015621.png)
