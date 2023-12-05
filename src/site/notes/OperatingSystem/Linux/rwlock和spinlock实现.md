@@ -116,10 +116,12 @@ static inline void arch_spin_lock(arch_spinlock_t *lock) {
 ## arch_write_trylock的实现
 这里使用AT&T格式的基于arm指令集的assembly language code snippet，
 这里的%0是contended，%1是res，基于asm申明的变量occur order，其中
-=r  constraint indicates that %0 (result) is an output operand, By adding & to the constraint, we are indicating that %0 is early-clobbered.
+>=r  constraint indicates that %0 (result) is an output operand, By adding & to the constraint, we are indicating that %0 is early-clobbered.
 The `ldrex` and `strexeq` instructions are part of ARM's exclusive access instructions, which provide a way to perform atomic read-modify-write operations.
+
 这里进程想要持有写锁需要确认当前lock的是否被占用(如果lock=0，则没有被占用)，如果没有被占用直接先将lock值设置成0x80000000，然后就执行smp_mb
-**`smp_mb();`**: This is a memory barrier, which ensures that all memory operations before the barrier are completed before any memory operations after the barrier. Memory barriers are used to control the order of memory accesses and ensure proper synchronization.
+
+> **`smp_mb();`**: This is a memory barrier, which ensures that all memory operations before the barrier are completed before any memory operations after the barrier. Memory barriers are used to control the order of memory accesses and ensure proper synchronization.
 
 ![Pasted image 20231205013902.png|undefined](/img/user/Pasted%20image%2020231205013902.png)
 
