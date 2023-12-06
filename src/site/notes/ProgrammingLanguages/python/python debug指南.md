@@ -1,0 +1,78 @@
+---
+{"dg-publish":true,"permalink":"/ProgrammingLanguages/python/python debug指南/","noteIcon":"3"}
+---
+
+
+**references**:
+- https://www.podoliaka.org/2016/04/10/debugging-cpython-gdb/
+- https://geronimo-bergk.medium.com/use-gdb-to-debug-running-python-processes-a961dc74ae36
+- https://wiki.python.org/moin/DebuggingWithGdb
+### 1. 安装python gdb扩展
+
+```python
+# gdb >= 7
+#debian系，通常会除了下载cpython binary python-dbg还有下载debugging symbols
+apt install python3-dbg
+#fedora系:centos,rhel可能会将debugging symbols从packges中移除，需要手动下载
+yum install python-debuginfo
+debuginfo-install python
+
+
+```
+可执行文件header中含有对应的debug symbol的id，gdb -p pid出现no debugging symbols found时可能是使用virtual environment工具如conda之类导致，因为默认gdb会加载pid在/proc/pid/exe指定的可执行文件，如果使用conda的而且可执行文件是非标准路径python的话，gdb从默认路径无法找到debug symbol，解决方法是指定标准路径上的相同版本的可执行文件
+gdb /usr/local/python -p pid
+
+![Pasted image 20231207015709.png|100%](/img/user/Pasted%20image%2020231207015709.png)
+如果py-bt还是未定义，可能是当前是虚拟环境或者个人其他配置导致部分object文件gdb找不到
+
+![Pasted image 20231207015042.png|undefined](/img/user/Pasted%20image%2020231207015042.png)
+
+默认情况下，gdb将尝试为调试中的特定对象文件自动加载Python扩展（如果存在）。具体来说，gdb将查找objfile-gdb.py，并尝试在启动时获取它的源代码：
+![Pasted image 20231207014907.png|undefined](/img/user/Pasted%20image%2020231207014907.png)
+
+![Pasted image 20231207014936.png|undefined](/img/user/Pasted%20image%2020231207014936.png)
+
+
+
+
+
+### 2.gdb调试的几种常见方式
+1. run python under gdb from the start
+![Pasted image 20231207030805.png|undefined](/img/user/Pasted%20image%2020231207030805.png)
+
+2. attach to running python process
+
+```bash
+#注意这里的第一个参数为可执行文件名，环境上多个python的需要正确指定
+#ll /proc/<pid>/exe
+gdb python <pid of running process>
+gdb attach <pid of running process>
+
+```
+
+ 3. debug from coredump file
+ 配置coredump文件生成路径
+
+```bash
+# /etc/security/limits.conf
+ulimit -c unlimited
+# %s signal number
+echo "/home/core/core-%h-%e-%s-%p-%i-%t" >  /proc/sys/kernel/core_pattern
+#这里的executable file推荐使用系统路径的相同版本的python
+gdb <executable file> coredump_file
+
+```
+
+### 3.gdb python查看相关堆栈信息
+
+```bash
+py-bt
+py-list
+py-locals
+#多线程
+info threads
+thread <tid>
+thread apply all py-list
+thread apply all py-bt
+
+```
