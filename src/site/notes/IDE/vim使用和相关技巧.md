@@ -4,7 +4,61 @@
 
 
 #vim
-vim推荐配置
+## 常用功能快捷键
+### 1. 高亮搜索
+
+```bash
+:set hlsearch
+/hello
+:nohlsearch
+
+```
+
+### 2.  复制粘贴
+
+```bash
+y
+p
+
+```
+
+### 3. undo & redo
+
+```bash
+u
+ctrl R
+```
+### 4.批量替换
+
+```bash
+:s/hello/hi/g
+```
+
+### 5.查看当前编码
+
+
+```bash
+:set encoding?
+:set encoding=utf-8
+# 查看文件编码
+file -i filename
+# 默认设置vim创建文件的编码
+vim ~/.vimrc
+# 比如当前encoding是latin，中文就会乱码，直接set encoding的话会恢复正常，但是编码不会保存，下次打开还是乱码
+set encoding=utf-8
+#保存文件使用指定编码
+set fileencoding=utf-8
+```
+
+### 6.语法高亮
+```bash
+:syntax on
+vim ~/.vimrc
+syntax on
+
+```
+
+## vim推荐配置
 一些需要的插件需要下载安装:
 ```bash
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
