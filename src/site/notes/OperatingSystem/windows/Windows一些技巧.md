@@ -9,4 +9,8 @@
 <font color="#92d050">win tab</font>可以打开当前所有desktop以及对应的应用tab，然后单指选择跳转tab
 <font color="#d99694">ctl tab</font>可以针对当前应用内打开的tabs进行跳转
 <font color="#c4bd97">ctl win</font> ->/<-跳转desktop
-### 2.  
+### 2.  拷贝文件到剪切板
+```bash
+#在需要拷贝文件所在的文件夹右键打开git
+cat file | clip
+```
