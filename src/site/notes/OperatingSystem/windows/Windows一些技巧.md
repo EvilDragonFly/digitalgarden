@@ -14,3 +14,16 @@
 #在需要拷贝文件所在的文件夹右键打开git
 cat file | clip
 ```
+#alias
+### 3. 设置alias
+```powershell
+#获取系统的profile文件
+echo $PROFILE
+#没有该文件的话直接创建，在该文件加入如下格式
+function kctl {
+	D:/k8s/kubectl.exe -n kubemaker --kubeconfig D:/k8s/config
+}
+#保存文件之后关闭打开的所有powershell terminals然后打开powershell terminal验证是否生效
+kctl get pods
+
+```
