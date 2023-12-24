@@ -63,7 +63,8 @@ export/import与save/load的区别
 退出当前container而不stop当前container(exit会stop容器)
 
 ```bash
-ctrl p q
+ctrl p q # 不kill当前session
+ctrl q   # kill当前session
 ```
 
 
@@ -74,6 +75,8 @@ docker attach container_name
 ```
 > [具体来说，`docker exec`命令会在容器内部启动一个新的进程，以执行指定的命令](https://www.zhihu.com/question/276485274)[1](https://www.zhihu.com/question/276485274). [而`docker attach`命令则会将标准输入和输出连接到容器内部的PID 1，实现对容器内正在执行的终端的附着](https://www.zhihu.com/question/276485274)[1](https://www.zhihu.com/question/276485274)
 
+<font color="#ff0000">如果是使用docker attach 到一个容器终端，如果关闭电脑或者关闭终端可能导致容器exit，按ctrl d也会导致容器推出，因为docker attach上的是一个主会话进程</font>
+<font color="#ff0000">docker exec -it登录的话ctrl q只会将docker exec创建的会话kill掉，不会影响容器主进程</font>
 ## 5. 容器文件互传
 
 ```bash
