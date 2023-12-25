@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/ProgrammingLanguages/python/pip/","noteIcon":"3"}
 ---
 
-#python/pip
+#python/pip #pip
 ![freestocks-flOVXZWbjJ4-unsplash.jpg|100%](/img/user/banner/freestocks-flOVXZWbjJ4-unsplash.jpg)
 ### pip常用命令
 
@@ -47,7 +47,9 @@ conda activate /usr/local/python3.7
 pip下载包到本地
 
 ```bash
-pip download megatron==0.1 .
+pip download megatron==0.1 --no-deps
+# pip默认会下载当前pip对应的本地python版本的whl包，我们可以指定别的python版本
+pip download megatron==0.1 --python-version 3.9 --no-deps
 
 ```
 
