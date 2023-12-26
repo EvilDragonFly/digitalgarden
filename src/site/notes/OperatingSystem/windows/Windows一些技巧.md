@@ -27,3 +27,9 @@ function kctl {
 kctl get pods
 
 ```
+
+### 4. 查看设置开机启动的程序
+```
+shell:startup
+```
+### 5. 
