@@ -11,6 +11,8 @@
 :set hlsearch
 /hello
 :nohlsearch
+vim ~/.vimrc
+set hlsearch
 
 ```
 
@@ -19,6 +21,8 @@
 ```bash
 y
 p
+#粘贴缩进没有对齐时可以先设置如下再进行粘贴
+:set paste
 
 ```
 
@@ -57,7 +61,32 @@ vim ~/.vimrc
 syntax on
 
 ```
+### 7.visual mode
+```bash
+# visual block mode
+ctrl v
+#visual line mode
+v
+# 批量缩进
+进入visual block mode
+按向下箭头选中需要缩进的行，点击I键，单击多个whitespace，esc
+多行删除反缩进
+空格处选中多行，点击x键，点击多次dot
+```
 
+### 8.打开文件直接进入某一行
+```
+vim file +155
+```
+### 9.批量注释，解注释
+```javascript
+// 开头添加#注释
+:10,20s/^/#/g
+:10,20s/#//g
+//开头添加//注释
+:10,20s#^#//#g
+:10,20s#^//##g
+```
 ## vim推荐配置
 一些需要的插件需要下载安装:
 ```bash
