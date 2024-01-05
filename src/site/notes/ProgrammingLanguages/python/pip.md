@@ -36,6 +36,10 @@ pip uninstall rich # 卸载包的缓存文件在~/.cache/pip中，之后重新in
 pip cache purge # 清除所有缓存文件
 
 pip install --no-index --find-links=deps --no-build-isolation psycopg[c]
+# 查看pip包有什么版本
+pip install datasets==
+#设置超时时间
+pip install datasets --default-time=200
 ```
 
 editable project
