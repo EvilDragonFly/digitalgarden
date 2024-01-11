@@ -40,6 +40,13 @@ pip install --no-index --find-links=deps --no-build-isolation psycopg[c]
 pip install datasets==
 #设置超时时间
 pip install datasets --default-time=200
+#安装包，不使用cache文件
+pip install torch --no-cache-dir
+
+#保存当前环境配置
+pip freeze > requirements.txt
+# 下载指定包到本地
+pip download -r requirements.txt --dest . --no-deps
 ```
 
 editable project
@@ -74,7 +81,9 @@ conda activate /usr/local/python3.7
 pip下载包到本地
 
 ```bash
-pip download megatron==0.1 .
+pip download megatron==0.1 --no-deps
+# pip默认会下载当前pip对应的本地python版本的whl包，我们可以指定别的python版本
+pip download megatron==0.1 --python-version 3.9 --no-deps
 
 ```
 
@@ -96,6 +105,11 @@ pip download megatron==0.1 .
 
 这将安装与Python 3.7环境相同的包到新的Python 3.8环境中，可能存在部分包不支持3.8，需要手动升级了
 #### 离线拷贝方式
+
+克隆已有环境
+```bash
+conda create -n env2 python=3.9 --clone env1
+```
 **通过硬链接复制已安装的包：**
 
 1. 首先，在Python 3.8环境中创建一个新的虚拟环境（如果尚未创建），并激活它：
