@@ -1,0 +1,29 @@
+---
+{"dg-publish":true,"permalink":"/ProgrammingLanguages/cpp/gcc/gcc/","noteIcon":"3"}
+---
+
+<font color="#00b050">recommend links:</font>
+https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html
+
+#gcc
+### 1.查看当前gcc支持那些C++ standards
+```bash
+gcc -v --help 2> /dev/null | sed -n '/^ *-std=\([^<][^ ]\+\).*/ {s//\1/p}'
+
+$(gcc -print-prog-name=cc1) --help | grep std
+```
+
+### 2.gcc查看具体的so的还有可执行文件的绝对路径
+```bash
+gcc --print-file-name=libstdc++.so
+gcc --print-prog-name=cc1
+```
+
+### 3. 查看符号定义位置
+https://stackoverflow.com/questions/57866267/how-does-the-n-option-to-image-lookup-in-lldb-operate-compared-to-the-s
+```bash
+# im loo -r -s hello
+image lookup -r -s hello
+
+```
+![Pasted image 20240121233343.png|undefined](/img/user/Pasted%20image%2020240121233343.png)
