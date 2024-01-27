@@ -27,3 +27,19 @@ image lookup -r -s hello
 
 ```
 ![Pasted image 20240121233343.png|undefined](/img/user/Pasted%20image%2020240121233343.png)
+
+### 4. 查看gcc/g++默认搜索路径
+- `-E`: Preprocess only; do not compile, assemble or link.
+- `-xc++`: Specify the language (C++)
+- `-`: Take input from stdin instead of a file
+- `-v`: Display the programs invoked by the compiler.
+- `< /dev/null`: Send emptiness to stdin.
+
+```bash
+#print当前库文件搜索路径
+g++ -print-search-dirs
+# 预处理
+g++ -E -xc++ - <<< "#include <iostream>"
+g++ -E -xc++ - -v < /dev/null
+man g++ | col -b | grep -B 2 -e '-std=.* This is the default'
+```
