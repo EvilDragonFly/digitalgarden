@@ -2,11 +2,18 @@
 {"dg-publish":true,"permalink":"/OperatingSystem/macos/macos配置/","noteIcon":"3"}
 ---
 
+#macos
 1. macos键盘配置
 设置page up page down terminal history macth
 设置成功之后可以直接在terminal先输入命令前缀之后点击向上arrow就可以调出匹配的历史命令记录
 ![Pasted image 20230729125944.png|undefined](/img/user/pics/Pasted%20image%2020230729125944.png)
+
+#keyboard #hotkey
 ## 直接terminal
+mac终端默认到行首是ctrl A，行尾是ctrl E，fn <-和fn ->没有作用(离谱的设计)
+如果想要像其他软件一样使用fn加方向键来navigate in terminal，需要设置terminal
+这里设置了home(fn <-)和end(fn ->)会发送\\001(ctrl A)和\\005(ctrl E)到终端
+![Pasted image 20240130233704.png|undefined](/img/user/Pasted%20image%2020240130233704.png)
 home: fn + <-
 end: fn + ->
 ## 如果是使用使用terminal登录到linux，
@@ -43,4 +50,10 @@ shift command . :隐藏/显示设置为hidden的文件，文件夹或者app
 ```bash
 chflags hidden path
 chflags nohidden path
+```
+
+### 切换shell
+```bash
+chsh -s bash
+chsh -s zsh
 ```
