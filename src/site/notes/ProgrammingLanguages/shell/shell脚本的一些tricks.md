@@ -21,6 +21,8 @@ split -l 100 large_file.log part_
 split -l 400 -d large_file.log part_ --verbose
 #按文件大小拆分
 split -b 1G large_file.log part_
+# 只拆分出一部分文件，当使用机器可用空间不足的时候可以参考
+split -n l1/10 input output
 #拆分数据还原
 cat part_* > merge_file.log
 #压缩文件
@@ -60,8 +62,35 @@ alias wget='wget --no-check-certificate'
 
 ```
 
-### 6. 常见函数
+### 5.日志按时间排序
+#sort #log
+```bash
+#文件夹中日志文件有多个，按：分割之后包含时间信息的在第4~6列
+grep -rn ERROR /home/plog|sort -t ":" -k4,6
 
+```
 
+### 6.性能计算
+#performance #awk #average
+> 日志样式:
+>  iteration       70/    5000 | consumed samples:         8960 | consumed tokens:     36700160 | elapsed time per iteration (ms): 1905.5 | learning rate: 1.250E-05 | global batch size:   128 | lm loss: 4.108219E+00 | loss scale: 1.0 | grad norm: 5.817 | actual seqlen:  4096 | number of skipped iterations:   0 | number of nan iterations:   0 | samples per second: 67.175 | TFLOPs: 98.24 | time (ms)
+```bash
+grep -rn "iteration (ms):" 7b_8m.log|awk -F ":" '{print $5}'|awk -F "|" '{print $1}' |awk '{sum+=$1} END {printf "average performance= %f tokens/s/p",sum/NR}'
 
-8. 
+#排除第一个数据, awk传递变量
+grep -rn "iteration (ms):" $1|awk -F ":" '{print $5}'|awk -F "|" 'NR>1 {print $1}' |awk '{sum+=$1} END {printf ",avg iteration time: %fms, average performance= %f tokens/s/p\n",sum/NR, perbz*4096*1000*NR/sum}' perbz=$2
+#对于删除第一个数据，可以在同一个awk中，计算平均数时总数是NR-1，或者只直接下一个awk，总数还是NR
+awk -F',' 'NR > 1 {sum+=$3} END {print sum / (NR - 1)}' cpu.csv 
+```
+
+### 7.设置ssh登录时的当前路径位置
+#login #ssh #pwd
+```bash
+for i in {1..10}
+do
+  ssh node${i} "tee -a /etc/profile <<< 'cd /home/ModelLink/examples/llama2"
+done
+
+```
+
+### 8. 常见函数
