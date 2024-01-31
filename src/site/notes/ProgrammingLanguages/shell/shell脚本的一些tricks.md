@@ -12,7 +12,8 @@ echo ${os// /}
 ```
 
 ### 2. 文件拆分和压缩
-#split
+#split 
+https://stackoverflow.com/a/50606414
 
 ```bash
 #默认aa,ab这种后置
