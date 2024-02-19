@@ -94,4 +94,22 @@ done
 
 ```
 
-### 8. 常见函数
+### 8.指定环境变量执行脚本
+```bash
+env -i var1=$var1 var2=$var2 test.sh options
+
+```
+
+### 9. 遍历解析获取命令选项
+```bash
+while [ $# -gt 0 ];do
+        ...
+        if []; then
+	        var1=$1
+	    elif []; then
+	        var2=$1
+        OPTIONS="$OPTIONS $1"
+        shift
+done
+
+```
