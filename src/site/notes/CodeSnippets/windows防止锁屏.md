@@ -10,22 +10,20 @@ windows设置从不关闭，从不休眠还是会锁屏导致一些需要连夜�
 
 ```vb
 ' 先定义一个Shell对象
-Set WshShell = WScript.CreateObject("WScript.Shell")
- 
+Set vbObj = WScript.CreateObject("WScript.Shell")
+WScript.Echo "buxiuxi"
 WScript.Sleep 5000
-wshShell.SendKeys "{NUMLOCK}"
+vbObj.SendKeys "{NUMLOCK}"
 WScript.Sleep 500
-wshShell.SendKeys "{NUMLOCK}"
- 
-'设置成正需要接续的时间，一个循环一分钟左右
-for i=1 to 180
-'设置成比屏保时间短点就可以
-	WScript.Sleep 60000
-	wshShell.SendKeys "{NUMLOCK}"
-	WScript.Sleep 500
-	wshShell.SendKeys "{NUMLOCK}"
+vbObj.SendKeys "{NUMLOCK}"
+for i=1 to 5
+' 一个迭代1h
+    WScript.Sleep 60 * 60 * 1000
+    vbObj.SendKeys "{NUMLOCK}"
+    WScript.Sleep 500
+    vbObj.SendKeys "{NUMLOCK}"
 next
- 
 
 ```
 
+vbs脚本直接双击或者在cmd中`cscript   test.vbs`运行
