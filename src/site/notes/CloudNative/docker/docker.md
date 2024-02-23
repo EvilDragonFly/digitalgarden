@@ -4,7 +4,7 @@
 
 ![timo-stern-EvcUtLF12XQ-unsplash.jpg|100%](/img/user/banner/timo-stern-EvcUtLF12XQ-unsplash.jpg)
 #docker
-## 1. docker的代理
+### 1. docker的代理
 docker和maven，npm类似，代理和系统代理不一样需要单独配置，具体配置参考[docker docs](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
 关于docker的配置代理的文件主要是两个，可以根据需要编辑其中一个或者两个一起
 /etc/docker/daemon.json
@@ -20,7 +20,7 @@ systemctl restart docker
 systemctl show --property=Environment docker
 ```
 其中daemon.json的方式只能docker高版本支持(23.0以上)
-## 2. Dockerfile的编写
+### 2. Dockerfile的编写
 ```bash
 ARG base=debian:v0  # 指定基础镜像，给出默认值，可以从docker build指定值覆盖
 FROM $bash
@@ -38,7 +38,7 @@ docker build -t . --build-arg arg1='a' --build-arg='b'
 
 ```
 dockerfile中两个连续的RUN之间的状态并不连续一致的，每一个RUN开始都会进入到/home/currentUser目录下，而非后一个RUN命令开始会在前一个RUN最后所在的目录下
-## 3. Docker的镜像
+### 3. Docker的镜像
 docker镜像可以直接由dockerfile制备，或者可以将运行中的容器当前的文件系统和状态保存下来
 
 ```bash
@@ -58,7 +58,7 @@ export/import与save/load的区别
 > export是从容器导出，save是从镜像导出，save会保存所有layer的信息，export不会保存所有layer的信息，因此导出文件更小，但是没法回滚
 
 <font color="#ffc000">对于想在镜像中保存文件，需要在docker run -v指定映射物理机文件夹子路径之外创建文件夹并保存，因为-v指定的物理机的路径之后将容器导出成镜像文件并不会保存下来，只是一个空文件夹</font>
-## 4.容器的进出
+### 4.容器的进出
 
 退出当前container而不stop当前container(exit会stop容器)
 
@@ -77,11 +77,36 @@ docker attach container_name
 
 <font color="#ff0000">如果是使用docker attach 到一个容器终端，如果关闭电脑或者关闭终端可能导致容器exit，按ctrl d也会导致容器推出，因为docker attach上的是一个主会话进程</font>
 <font color="#ff0000">docker exec -it登录的话ctrl q只会将docker exec创建的会话kill掉，不会影响容器主进程</font>
-## 5. 容器文件互传
+### 5. 容器文件互传
 
 ```bash
 docker cp container_name:path host_path
 docker cp host_path container_name:path
 ```
 
-## 6. Docker Volume
+### 6. 更改docker存放image位置
+```bash
+docker info -f '{{ .DockerRootDir }}'
+```
+vim /etc/docker/daemon.json
+```json
+{ 
+   "data-root": "/runtime/docker"
+}
+```
+
+```bash
+# restart and check whether the modifies is avtivated
+systemctl restart docker
+docker info -f '{{ .DockerRootDir }}'
+
+```
+
+### 7.容器路径映射
+
+
+> [!NOTE] 注意
+> 对于容器中映射系统路径需要注意最好不好映射和容器镜像中已有的文件夹路径一样的宿主机路径，否者容器内部的该路径会被系统路径覆盖，比如pip editable project所在路径被覆盖导致缺少包
+
+
+##  Docker Volume
