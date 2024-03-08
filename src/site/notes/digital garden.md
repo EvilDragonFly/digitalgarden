@@ -15,25 +15,40 @@ title:主页
 
 ```tagcloud
 ```
-文章列表:141
+文章列表:152
 
 - [[digital garden\|digital garden]]: \-
+- [[AI/Infererence/推理框架\|推理框架]]: \-
+- [[AI/深度学习权重分类\|深度学习权重分类]]: \-
+- [[OperatingSystem/Linux/ssh\|ssh]]: \-
+- [[AI/lora微调介绍\|lora微调介绍]]: \-
+- [[OperatingSystem/macos/macos配置\|macos配置]]: \-
+- [[submodules/pve/openwrt/openwrt service启动流程，从定位dynv6无法自动拉起分析开始\|openwrt service启动流程，从定位dynv6无法自动拉起分析开始]]: \-
+- [[submodules/pve/openwrt/l3_device\|l3_device]]: \-
+- [[submodules/pve/openwrt/ubus\|ubus]]: \-
+- [[ProgrammingLanguages/shell/shell脚本的一些tricks\|shell脚本的一些tricks]]: \-
+- [[ProgrammingLanguages/python/python语法系列\|python语法系列]]: \-
+- [[OperatingSystem/Linux/disk/from disk to lvm\|from disk to lvm]]: \-
+- [[AI/通信框架\|通信框架]]: \-
+- [[CodeSnippets/找到符号在那个so中定义\|找到符号在那个so中定义]]: \-
+- [[CodeSnippets/windows防止锁屏\|windows防止锁屏]]: \-
+- [[OperatingSystem/Linux/packages/apt\|apt]]: \-
+- [[CodeSnippets/loss绘图新版\|loss绘图新版]]: \-
+- [[AI/Infererence/nvidia推理框架\|nvidia推理框架]]: \-
+- [[AI/transformers超参数介绍\|transformers超参数介绍]]: \-
+- [[AI/huggingface\|huggingface]]: \-
+- [[AI/ascend/昇腾npu服务器使用教程\|昇腾npu服务器使用教程]]: \-
 - [[CloudNative/docker/docker\|docker]]: \-
 - [[OperatingSystem/Linux/network/RDMA\|RDMA]]: \-
 - [[submodules/pve/openwrt/一些变动更改\|一些变动更改]]: \-
 - [[ProgrammingLanguages/Go/golang的构建与执行\|golang的构建与执行]]: \-
 - [[ProgrammingLanguages/Untitled\|Untitled]]: \-
-- [[ProgrammingLanguages/shell/shell脚本的一些tricks\|shell脚本的一些tricks]]: \-
 - [[OperatingSystem/Linux/boot/systemd笔记\|systemd笔记]]: \-
-- [[CodeSnippets/windows防止锁屏\|windows防止锁屏]]: \-
 - [[submodules/pve/openwrt/openwrt源码分析\|openwrt源码分析]]: \-
-- [[OperatingSystem/Linux/ssh\|ssh]]: \-
-- [[OperatingSystem/macos/macos配置\|macos配置]]: \-
 - [[OperatingSystem/Linux/network/dhcp\|dhcp]]: \-
 - [[ProgrammingLanguages/cpp/STL/stl标准模版库总结介绍\|stl标准模版库总结介绍]]: \-
 - [[submodules/pve/公网ipv6\|公网ipv6]]: \-
 - [[OperatingSystem/Linux/FileSystem/Permission\|Permission]]: \-
-- [[CodeSnippets/loss绘图新版\|loss绘图新版]]: \-
 - [[CloudNative/docker/ctr\|ctr]]: \-
 - [[OperatingSystem/Linux/rwlock和spinlock实现\|rwlock和spinlock实现]]: \-
 - [[Storage/存储架构\|存储架构]]: \-
@@ -45,7 +60,6 @@ title:主页
 - [[CodeSnippets/获取存储进程当前iops\|获取存储进程当前iops]]: \-
 - [[CodeSnippets/代码脚本文件中的链接汇聚\|代码脚本文件中的链接汇聚]]: \-
 - [[OperatingSystem/Linux/git/git\|git]]: \-
-- [[OperatingSystem/Linux/disk/from disk to lvm\|from disk to lvm]]: \-
 - [[submodules/pve/Disk Manage\|Disk Manage]]: \-
 - [[submodules/pve/openwrt/OpenWRT\|OpenWRT]]: \-
 - [[CodeSnippets/cpp多线程生产者和消费者\|cpp多线程生产者和消费者]]: \-
@@ -61,7 +75,6 @@ title:主页
 - [[AI/导数和梯度\|导数和梯度]]: \-
 - [[ProgrammingLanguages/cpp/visit\|visit]]: \-
 - [[OperatingSystem/Linux/sed\|sed]]: \-
-- [[CodeSnippets/找到符号在那个so中定义\|找到符号在那个so中定义]]: \-
 - [[AI/tp和dp\|tp和dp]]: \-
 - [[待整理\|待整理]]: \-
 - [[CodeSnippets/ipv6\|ipv6]]: \-
@@ -101,14 +114,13 @@ title:主页
 - [[OperatingSystem/Linux/vim\|vim]]: \-
 - [[OperatingSystem/windows/wsl\|wsl]]: \-
 - [[OperatingSystem/操作系统相关问题\|操作系统相关问题]]: \-
-- [[ProgrammingLanguages/cpp/cpp-concurrency/C++ Concurrency in Action Notes\|C++ Concurrency in Action Notes]]: \-
 - [[ProgrammingLanguages/cpp/cmake\|cmake]]: \-
+- [[ProgrammingLanguages/cpp/cpp-concurrency/C++ Concurrency in Action Notes\|C++ Concurrency in Action Notes]]: \-
 - [[OperatingSystem/Linux/symbol\|symbol]]: \-
 - [[OperatingSystem/Linux/tunning/调优指南\|调优指南]]: \-
 - [[OperatingSystem/Linux/pci\|pci]]: \-
 - [[OperatingSystem/Linux/per-cpu variables vs per-thread variables\|per-cpu variables vs per-thread variables]]: \-
 - [[OperatingSystem/Linux/network/network card\|network card]]: \-
-- [[OperatingSystem/Linux/packages/apt\|apt]]: \-
 - [[OperatingSystem/Linux/packages/rpm\|rpm]]: \-
 - [[OperatingSystem/Linux/gdb\|gdb]]: \-
 - [[OperatingSystem/Linux/network/cntlm\|cntlm]]: \-
@@ -116,11 +128,11 @@ title:主页
 - [[OperatingSystem/Linux/bmc\|bmc]]: \-
 - [[OperatingSystem/Linux/curl\|curl]]: \-
 - [[OperatingSystem/Linux/debian\|debian]]: \-
-- [[OperatingSystem/Linux/FileSystem/文件传输\|文件传输]]: \-
 - [[OperatingSystem/Linux/GUI\|GUI]]: \-
+- [[OperatingSystem/Linux/FileSystem/文件传输\|文件传输]]: \-
 - [[Excalidraw/Drawing 2023-10-19 12.37.02.excalidraw\|Drawing 2023-10-19 12.37.02.excalidraw]]: October 19, 2023
-- [[OperatingSystem/Linux/Build System\|Build System]]: \-
 - [[OpenSource/根据开源社区学bash- rustup.sh\|根据开源社区学bash- rustup.sh]]: \-
+- [[OperatingSystem/Linux/Build System\|Build System]]: \-
 - [[Documents/EXCEL\|EXCEL]]: \-
 - [[Documents/obsidian\|obsidian]]: \-
 - [[Excalidraw/Drawing 2023-09-23 13.08.33.excalidraw\|Drawing 2023-09-23 13.08.33.excalidraw]]: September 23, 2023
@@ -146,7 +158,6 @@ title:主页
 - [[OperatingSystem/windows/windows commands\|windows commands]]: \-
 - [[languages and culture/日语学习\|日语学习]]: \-
 - [[OperatingSystem/Linux/编译链接到执行\|编译链接到执行]]: \-
-- [[AI/huggingface\|huggingface]]: \-
 - [[Storage/ceph/ceph源码学习-IO路径\|ceph源码学习-IO路径]]: \-
 - [[Storage/ceph/ceph源码学习-ceph的配置解析\|ceph源码学习-ceph的配置解析]]: \-
 - [[submodules/pve/Network Manage\|Network Manage]]: \-
@@ -193,10 +204,12 @@ title:主页
 | #storage(2)         | <ul><li>[[Storage/ceph/ceph.md\\|ceph]]</li><li>[[submodules/pve/Disk Manage.md\\|Disk Manage]]</li></ul>                                                                                                                                                                                                                                 |
 | #ai(1)              | <ul><li>[[CodeSnippets/读取训练loss趋势并且对比绝对差值.md\\|读取训练loss趋势并且对比绝对差值]]</li></ul>                                                                                                                                                                                                                                                             |
 | #apt(1)             | <ul><li>[[OperatingSystem/Linux/packages/apt.md\\|apt]]</li></ul>                                                                                                                                                                                                                                                                         |
+| #autostart(1)       | <ul><li>[[OperatingSystem/macos/macos配置.md\\|macos配置]]</li></ul>                                                                                                                                                                                                                                                                          |
 | #average(1)         | <ul><li>[[ProgrammingLanguages/shell/shell脚本的一些tricks.md\\|shell脚本的一些tricks]]</li></ul>                                                                                                                                                                                                                                                   |
 | #awk(1)             | <ul><li>[[ProgrammingLanguages/shell/shell脚本的一些tricks.md\\|shell脚本的一些tricks]]</li></ul>                                                                                                                                                                                                                                                   |
 | #bash(1)            | <ul><li>[[OperatingSystem/Linux/bash环境设置顺序.md\\|bash环境设置顺序]]</li></ul>                                                                                                                                                                                                                                                                    |
 | #bashrc(1)          | <ul><li>[[OperatingSystem/Linux/bash环境设置顺序.md\\|bash环境设置顺序]]</li></ul>                                                                                                                                                                                                                                                                    |
+| #boot(1)            | <ul><li>[[OperatingSystem/macos/macos配置.md\\|macos配置]]</li></ul>                                                                                                                                                                                                                                                                          |
 | #build(1)           | <ul><li>[[ProgrammingLanguages/Go/golang的构建与执行.md\\|golang的构建与执行]]</li></ul>                                                                                                                                                                                                                                                              |
 | #bus(1)             | <ul><li>[[OperatingSystem/Linux/pci.md\\|pci]]</li></ul>                                                                                                                                                                                                                                                                                  |
 | #c(1)               | <ul><li>[[jobs/cpp八股文面试.md\\|cpp八股文面试]]</li></ul>                                                                                                                                                                                                                                                                                         |
@@ -230,6 +243,7 @@ title:主页
 | #haproxy(1)         | <ul><li>[[submodules/pve/haproxy.md\\|haproxy]]</li></ul>                                                                                                                                                                                                                                                                                 |
 | #homepage(1)        | <ul><li>[[digital garden.md\\|digital garden]]</li></ul>                                                                                                                                                                                                                                                                                  |
 | #hotkey(1)          | <ul><li>[[OperatingSystem/macos/macos配置.md\\|macos配置]]</li></ul>                                                                                                                                                                                                                                                                          |
+| #inference(1)       | <ul><li>[[AI/Infererence/推理框架.md\\|推理框架]]</li></ul>                                                                                                                                                                                                                                                                                       |
 | #interview(1)       | <ul><li>[[jobs/cpp八股文面试.md\\|cpp八股文面试]]</li></ul>                                                                                                                                                                                                                                                                                         |
 | #kernel(1)          | <ul><li>[[OperatingSystem/Linux/kernel/内核日志.md\\|内核日志]]</li></ul>                                                                                                                                                                                                                                                                         |
 | #keyboard(1)        | <ul><li>[[OperatingSystem/macos/macos配置.md\\|macos配置]]</li></ul>                                                                                                                                                                                                                                                                          |
@@ -260,6 +274,7 @@ title:主页
 | #pwd(1)             | <ul><li>[[ProgrammingLanguages/shell/shell脚本的一些tricks.md\\|shell脚本的一些tricks]]</li></ul>                                                                                                                                                                                                                                                   |
 | #python/pip(1)      | <ul><li>[[ProgrammingLanguages/python/pip.md\\|pip]]</li></ul>                                                                                                                                                                                                                                                                            |
 | #re(1)              | <ul><li>[[CodeSnippets/读取训练loss趋势并且对比绝对差值.md\\|读取训练loss趋势并且对比绝对差值]]</li></ul>                                                                                                                                                                                                                                                             |
+| #redirect(1)        | <ul><li>[[ProgrammingLanguages/shell/shell脚本的一些tricks.md\\|shell脚本的一些tricks]]</li></ul>                                                                                                                                                                                                                                                   |
 | #reverseproxy(1)    | <ul><li>[[submodules/pve/haproxy.md\\|haproxy]]</li></ul>                                                                                                                                                                                                                                                                                 |
 | #rpm(1)             | <ul><li>[[OperatingSystem/Linux/packages/rpm.md\\|rpm]]</li></ul>                                                                                                                                                                                                                                                                         |
 | #science(1)         | <ul><li>[[sciences/particles.md\\|particles]]</li></ul>                                                                                                                                                                                                                                                                                   |
