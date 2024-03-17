@@ -4,6 +4,11 @@
 
 #dataview
 
+```js title:"get the note number in a line"
+159
+
+```
+
 ```sql title:"select from specific tag and display folder, tags, date"
 table file.folder as folder, file.etags as tags, file.ctime as date
 from #storage
