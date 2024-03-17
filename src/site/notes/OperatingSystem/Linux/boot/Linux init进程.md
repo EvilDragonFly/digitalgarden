@@ -33,4 +33,6 @@ graphical.target
 [root@node5 ~]# systemctl get-default
 multi-user.target
 
+systemctl isolate graphical.target    #**切换为第五启动级别-图形界面**
+
 ```
