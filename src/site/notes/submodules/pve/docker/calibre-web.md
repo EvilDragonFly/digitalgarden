@@ -30,7 +30,7 @@ We should create /opt/containers/calibre-web/config and /opt/containers/calibre-
 cd /opt/containers/calibre-web/
 docker compose -f calibre-web.yml up -d
 ```
-![Pasted image 20230513184649.png|undefined](/img/user/submodules/pve/docker/pics/Pasted%20image%2020230513184649.png)
+![Pasted image 20230513184649.png](/img/user/submodules/pve/docker/pics/Pasted%20image%2020230513184649.png)
 
 ## 2. Permission Configuration of the calibre-web
 Firstly we should create user admin in host because default user in calibre container is admin.
@@ -39,7 +39,7 @@ useradd admin
 groups admin
 ```
 copy the metadata.db in current folder to host folder:/opt/containers/calibre-web/library/ and adjust the permission.
-![Pasted image 20230513184632.png|undefined](/img/user/submodules/pve/docker/pics/Pasted%20image%2020230513184632.png)
+![Pasted image 20230513184632.png](/img/user/submodules/pve/docker/pics/Pasted%20image%2020230513184632.png)
 
 ## 3. Login in and make some adjustment
 login in with admin/admin123
