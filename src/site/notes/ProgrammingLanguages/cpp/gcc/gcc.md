@@ -26,7 +26,7 @@ https://stackoverflow.com/questions/57866267/how-does-the-n-option-to-image-look
 image lookup -r -s hello
 
 ```
-![Pasted image 20240121233343.png|undefined](/img/user/Pasted%20image%2020240121233343.png)
+![Pasted image 20240121233343.png](/img/user/pics/Pasted%20image%2020240121233343.png)
 
 ### 4. 查看gcc/g++默认搜索路径
 - `-E`: Preprocess only; do not compile, assemble or link.
@@ -42,4 +42,13 @@ g++ -print-search-dirs
 g++ -E -xc++ - <<< "#include <iostream>"
 g++ -E -xc++ - -v < /dev/null
 man g++ | col -b | grep -B 2 -e '-std=.* This is the default'
+```
+
+### 5. glibc相关操作
+
+```bash
+#glibc降级，比较危险的操作，可能导致多个基础命令无法使用
+yum downgrade glibc\*
+#查看当前glibc版本
+ldd --version
 ```
