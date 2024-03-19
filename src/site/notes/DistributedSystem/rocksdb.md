@@ -1,8 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/DistributedSystem/rocksdb/","noteIcon":"3"}
+dg-publish: true
 ---
-
-![Pasted image 20231119165350.png|100%](/img/user/Pasted%20image%2020231119165350.png)
+![Pasted image 20231119165350.png|100%](/img/user/pics/Pasted%20image%2020231119165350.png)
 ## key feature
 高效发挥存储硬件性能的嵌入式KV存储引擎
 针对写多读少的场景
