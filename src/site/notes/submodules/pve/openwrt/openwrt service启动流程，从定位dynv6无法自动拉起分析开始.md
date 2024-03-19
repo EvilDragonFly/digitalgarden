@@ -66,3 +66,7 @@ ifstatus wan6 | jsonfilter -e '@.l3_device' 2>/dev/null
 
 1.分析启动优先级比较高，启动阶段，依赖的device还未完全初始化完成
 2.最末优先级时刻依赖的device还未初始化完成，需要在start入口函数先主动sleep 30s
+3.reboot 路由器，dynv6服务sleep 30s即可正常，在这个时间段wan6获取到公网ipv6地址
+4.下电上电的情况的话等到dynv6服务(start=299)启动阶段到wan6获取到公网ipv6地址需要7mins左右，所以设置dynv6服务器在start函数入口先`sleep 10m`保证在机器获取到公网ipv6地址之后再进行ipv6地址同步到dynv6
+
+5. 服务器启动时候的命令是bash /etc/rc.common servicepath boot
