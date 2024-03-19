@@ -78,9 +78,9 @@ grep -rn ERROR /home/plog|sort -t ":" -k4,6
 ```bash
 grep -rn "iteration (ms):" 7b_8m.log|awk -F ":" '{print $5}'|awk -F "|" '{print $1}' |awk '{sum+=$1} END {printf "average performance= %f tokens/s/p",sum/NR}'
 
-#排除第一个数据, awk传递变量
-grep -rn "iteration (ms):" $1|awk -F ":" '{print $5}'|awk -F "|" 'NR>1 {print $1}' |awk '{sum+=$1} END {printf ",avg iteration time: %fms, average performance= %f tokens/s/p\n",sum/NR, perbz*4096*1000*NR/sum}' perbz=$2
-#对于删除第一个数据，可以在同一个awk中，计算平均数时总数是NR-1，或者只直接下一个awk，总数还是NR
+# 排除第三个参数指定的个数数据, awk传递变量
+grep -rn "iteration (ms):" $1|awk -F ":" '{print $5}'|awk -F "|" 'NR>dismiss {print $1}' dismiss=$3 |awk '{sum+=$1} END {printf ",avg iteration time: %fms, average performance= %f tokens/s/p\n",sum/NR, perbz*4096*1000*NR/sum}' perbz=$2
+# 对于删除第一个数据，可以在同一个awk中，计算平均数时总数是NR-1，或者只直接下一个awk，总数还是NR
 awk -F',' 'NR > 1 {sum+=$3} END {print sum / (NR - 1)}' cpu.csv 
 ```
 
@@ -95,6 +95,7 @@ done
 ```
 
 ### 8.指定环境变量执行脚本
+#env
 ```bash
 env -i var1=$var1 var2=$var2 test.sh options
 
@@ -111,5 +112,23 @@ while [ $# -gt 0 ];do
         OPTIONS="$OPTIONS $1"
         shift
 done
+
+```
+
+### 10.校验文件是否存在
+```bash
+#校验文件存在并且是个regular file, excludes directories, symbolic links, block devices, character devices, etc
+[ -f /usr/bin/curl ]
+#校验文件是否存在，不管类型，如文件夹，链接文件等等
+[ -e /usr/bin/curl ]
+#在-f的基础上校验文件是否具有x权限
+[ -x /usr/bin/curl ]
+```
+
+### 11.日志重定向
+#redirect
+```bash
+# 脚本开头加上这一行将脚本输出重定向到指定文件
+exec >>/root/log 2>&1
 
 ```
