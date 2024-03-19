@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/Documents/EXCEL/","noteIcon":"3"}
+dg-publish: true
 ---
-
 #excel
 1. 查看某一列中是否有重复项(为了使公式生效，需要确认单元格格式为general)
 ```excel
