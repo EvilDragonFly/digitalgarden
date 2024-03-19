@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/Database/MySQL/mysql deploy/","noteIcon":"3"}
+dg-publish: true
 ---
-
 ## deploy mysql
 [install mysql in ubuntu 2204](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
 ```sh
