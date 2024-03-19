@@ -93,10 +93,10 @@ struct lockdep_map dep_map;
 ## spinlock
 spinlock的实现类似于银行业务办理系统，每个客户来办理业务的时候需要先取号，之后等银行叫号再到指定柜台办理业务。
 arch_rwlock_t结构体内的owner表示当前可持有lock的线程，next表示下一个线程拿到的号码,系统内部有一个全局的arch_rwlock_t来来显示当前作业系统的状态
-![Pasted image 20231205001443.png|undefined](/img/user/Pasted%20image%2020231205001443.png)
+![Pasted image 20231205001443.png](/img/user/pics/Pasted%20image%2020231205001443.png)
 arch_spin_lock实现
 每一个想要作业的线程需要先同步一份系统的arch_rwlock_t到本地,系统的next会+1，表示下一个线程拿到的号码，在线程拿到号码之后会不定时的更新本地记忆的owner，直到owner等于拿到的号码牌就获取lock得到执行权
-![Pasted image 20231205001331.png|undefined](/img/user/Pasted%20image%2020231205001331.png)
+![Pasted image 20231205001331.png](/img/user/pics/Pasted%20image%2020231205001331.png)
 以上汇编代码简化成cpp功能如下
 
 ```cpp
@@ -123,9 +123,9 @@ The `ldrex` and `strexeq` instructions are part of ARM's exclusive access instru
 
 > **`smp_mb();`**: This is a memory barrier, which ensures that all memory operations before the barrier are completed before any memory operations after the barrier. Memory barriers are used to control the order of memory accesses and ensure proper synchronization.
 
-![Pasted image 20231205013902.png|undefined](/img/user/Pasted%20image%2020231205013902.png)
+![Pasted image 20231205013902.png](/img/user/pics/Pasted%20image%2020231205013902.png)
 
-![Pasted image 20231205015339.png|undefined](/img/user/Pasted%20image%2020231205015339.png)
+![Pasted image 20231205015339.png](/img/user/pics/Pasted%20image%2020231205015339.png)
 
 对于arch_write_trylock的实现arm架构由于有asm代码比较难懂，可参考arc架构的相关实现，原理基本类似的
-![Pasted image 20231205015621.png|undefined](/img/user/Pasted%20image%2020231205015621.png)
+![Pasted image 20231205015621.png](/img/user/pics/Pasted%20image%2020231205015621.png)
