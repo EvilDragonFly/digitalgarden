@@ -8,7 +8,7 @@ windows设置从不关闭，从不休眠还是会锁屏导致一些需要连夜�
 将以下脚本加入到文本保存更改后缀名为vbs，双击之后进程可在任务管理中搜索wscript.exe进程
 需要结束进程的话直接杀死wscript.exe进程即可
 
-```vb
+```vb {3,10-11}
 ' 先定义一个Shell对象
 Set vbObj = WScript.CreateObject("WScript.Shell")
 WScript.Echo "buxiuxi"
