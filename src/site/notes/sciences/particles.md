@@ -1,11 +1,10 @@
 ---
-{"dg-publish":true,"permalink":"/sciences/particles/","noteIcon":"3"}
+dg-publish: true
 ---
-
 #science #physics
 
 ![Pasted image 20230902101531.png|100%](/img/user/pics/Pasted%20image%2020230902101531.png)
-![Pasted image 20230910011034.png|undefined](/img/user/pics/Pasted%20image%2020230910011034.png)
+![Pasted image 20230910011034.png](/img/user/pics/Pasted%20image%2020230910011034.png)
 
 ## 基本粒子定义和相关概念
 1. elemental particles :
