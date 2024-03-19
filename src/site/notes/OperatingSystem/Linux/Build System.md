@@ -44,7 +44,7 @@ https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
 1. `$@` The file name of the target of the rule. If the target is an archive member, then ‘\$\@’ is the name of the archive file. In a pattern rule that has multiple targets (see Introduction to Pattern Rules), ‘$@’ is the name of whichever target caused the rule's recipe to be run.
 2. `$<` The name of the first prerequisite. If the target got its recipe from an implicit rule, this will be the first prerequisite added by the implicit rule.
 
-```sh {9,10}
+```sh info:9,10
 CXXFLAGS += -O3 -Wall -shared -std=c++11 -fPIC -fdiagnostics-color
 CPPFLAGS += $(shell python3 -m pybind11 --includes)
 LIBNAME = helpers
