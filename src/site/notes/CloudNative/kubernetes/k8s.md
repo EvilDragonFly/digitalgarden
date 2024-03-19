@@ -2,8 +2,9 @@
 {"dg-publish":true,"permalink":"/CloudNative/kubernetes/k8s/","noteIcon":"3"}
 ---
 
-![Pasted image 20231119163649.png|100%](/img/user/Pasted%20image%2020231119163649.png)
+![Pasted image 20231119163649.png|100%](/img/user/pics/Pasted%20image%2020231119163649.png)
 
+#k8s
 ## network
 > Pods in Kubernetes communicate with each other using their network. When pods are scheduled on different nodes (servers), Kubernetes takes care of networking to enable communication between them. Here's a simplified overview of how pods in different servers communicate:
 
@@ -21,3 +22,6 @@
     
 
 In summary, Kubernetes abstracts away the complexities of networking when it comes to communication between pods on different nodes. Pods can communicate with each other using standard networking principles, and the underlying Kubernetes networking solution ensures that the communication is seamless and transparent to the applications running in the pods.
+
+k8s部署教程
+
