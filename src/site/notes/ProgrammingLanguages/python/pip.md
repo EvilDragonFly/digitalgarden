@@ -45,7 +45,7 @@ pip install torch --no-cache-dir
 
 #保存当前环境配置
 pip freeze > requirements.txt
-# 下载指定包到本地
+# 下载指定包到本地，对于requirements里面可以不用指定版本的限定，可以直接用仓库里面那种空格后面接一个版本的形式
 pip download -r requirements.txt --dest . --no-deps
 ```
 
