@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/OperatingSystem/Linux/packages/rpm/","noteIcon":"3"}
+dg-publish: true
 ---
-
 #rpm #yum
 
 设置yum安装包时不进行ssl校验
