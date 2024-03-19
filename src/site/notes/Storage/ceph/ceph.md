@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/Storage/ceph/ceph/","noteIcon":"3"}
+dg-publish: true
 ---
-
 #storage/ceph
 ## config
 show a config of ceph, ceph-osd@0 service should  be in the node where we execute below code.
