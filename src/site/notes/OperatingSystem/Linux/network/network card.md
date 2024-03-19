@@ -1,19 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/OperatingSystem/Linux/network/network card/","noteIcon":"3"}
+dg-publish: true
 ---
-
 查看网卡的pci地址(新版的linux的网卡一般可以通过网卡名识别)
 `ethtool -i ens7`
-![Pasted image 20230717213002.png|undefined](/img/user/OperatingSystem/Linux/network/pics/Pasted%20image%2020230717213002.png)
+![Pasted image 20230717213002.png](/img/user/OperatingSystem/Linux/network/pics/Pasted%20image%2020230717213002.png)
 查看对应的内核模块
 `lspci -s 0000:04:00.0 -vv`
-![Pasted image 20230717213217.png|undefined](/img/user/OperatingSystem/Linux/network/pics/Pasted%20image%2020230717213217.png)
+![Pasted image 20230717213217.png](/img/user/OperatingSystem/Linux/network/pics/Pasted%20image%2020230717213217.png)
 查看内核模块对应的ko文件
 `modinfo r8169`
-![Pasted image 20230717213341.png|undefined](/img/user/OperatingSystem/Linux/network/pics/Pasted%20image%2020230717213341.png)
+![Pasted image 20230717213341.png](/img/user/OperatingSystem/Linux/network/pics/Pasted%20image%2020230717213341.png)
 查看文件对应的deb包或者rpm包
 `dpkg -S filepath` or `rpm -qf filepath`
-![Pasted image 20230717213446.png|undefined](/img/user/OperatingSystem/Linux/network/pics/Pasted%20image%2020230717213446.png)
+![Pasted image 20230717213446.png](/img/user/OperatingSystem/Linux/network/pics/Pasted%20image%2020230717213446.png)
 
 #network/bond 
 查看当前所有的bond
@@ -32,4 +31,4 @@ arping <hostip>
 ```
 查看当前主机的arp cache
 如下可以看见openwrt的ip为192.168.66.100，对应的mac地址是56:35:9d:10:0c:c8
-![Pasted image 20230825001905.png|undefined](/img/user/pics/Pasted%20image%2020230825001905.png)
+![Pasted image 20230825001905.png](/img/user/pics/Pasted%20image%2020230825001905.png)
