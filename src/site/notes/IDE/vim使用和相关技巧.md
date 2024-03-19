@@ -5,6 +5,7 @@
 
 #vim
 ## 常用功能快捷键
+set ts=4 sw=4
 ### 1. 高亮搜索
 
 ```bash
@@ -52,6 +53,8 @@ vim ~/.vimrc
 set encoding=utf-8
 #保存文件使用指定编码
 set fileencoding=utf-8
+# 解决windows文件在linux乱码问题
+set fileformat=unix
 ```
 
 ### 6.语法高亮
