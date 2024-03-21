@@ -132,3 +132,34 @@ done
 exec >>/root/log 2>&1
 
 ```
+
+
+### 12.字符串分割
+
+```sh
+    read -ra parts <<< "$1"
+    model_type="${parts[0]}"
+    if [ "$model_type" == "pa" ]; then
+        data_type="${parts[1]}"
+    fi
+
+```
+
+### 13.数组
+#array
+
+```bash
+arr=(1 2 3)
+arr+=( 4 )
+echo ${arr[@]}
+echo "=========" element
+for i in ${arr[@]}
+do
+	echo $i
+done
+echo "=========" index
+for i in ${!arr[@]}
+	echo ${arr[$i]}
+done
+
+```
