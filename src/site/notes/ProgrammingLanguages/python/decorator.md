@@ -76,3 +76,23 @@ print(f"now with dollars:{m.dollars},cents:{m.cents}, total cents:{m.total_cents
 # now with dollars:7,cents:12, total cents:712
 
 ```
+
+### 3. dataclass decorator
+
+https://stackoverflow.com/a/74406814
+
+
+自动添加__init__方法
+
+```py
+from dataclasses import dataclass
+@dataclass
+class Point:
+	x: int
+	y: int
+
+a = Point(10,20)
+#print(a)
+print(a.__repr__())
+
+```
