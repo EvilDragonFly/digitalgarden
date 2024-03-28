@@ -5,7 +5,7 @@
 #dataview
 
 ```js title:"get the note number in a line"
-159
+166
 
 ```
 
