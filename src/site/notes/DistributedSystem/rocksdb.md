@@ -1,4 +1,8 @@
 ---
+{"dg-publish":true,"permalink":"/DistributedSystem/rocksdb/","noteIcon":"3"}
+---
+
+---
 dg-publish: true
 ---
 ![Pasted image 20231119165350.png|100%](/img/user/pics/Pasted%20image%2020231119165350.png)
