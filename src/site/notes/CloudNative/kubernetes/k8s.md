@@ -25,3 +25,56 @@ In summary, Kubernetes abstracts away the complexities of networking when it com
 
 k8s部署教程
 
+
+
+```sh title:"获取指定namespace的pods"
+kubectl -n public-resource get pod
+
+```
+
+### 1.路径映射和设备映射
+#mount
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-container
+    image: busybox
+    command: ["ls", "/dev/mem"]
+    devices:
+    - name: /dev/mem
+      devicePath: /dev/mem
+
+```
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-container
+    image: busybox
+    command: ["ls", "/mnt/data"]
+    volumeMounts:
+    - name: data
+      mountPath: /mnt/data
+  volumes:
+  - name: data
+    hostPath:
+      path: /data
+```
+
+
+
+```sh
+kubectl delete -f a.yaml
+
+kubectl logs -f -n namespace podname
+
+```
