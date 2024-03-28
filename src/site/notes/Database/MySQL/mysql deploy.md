@@ -1,4 +1,8 @@
 ---
+{"dg-publish":true,"permalink":"/Database/MySQL/mysql deploy/","noteIcon":"3"}
+---
+
+---
 dg-publish: true
 ---
 ## deploy mysql
