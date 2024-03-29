@@ -32,7 +32,7 @@ git checkout -- master  # discard uncommitted changes to the _file_ "master"
 
 ## submodule
 1. add submodules
-git submodule add giturl path-to-existedfolder/your-favor-repository-name
+`git submodule add giturl path-to-existedfolder/your-favor-repository-name`
 2. update submodule
 
 ```bash
