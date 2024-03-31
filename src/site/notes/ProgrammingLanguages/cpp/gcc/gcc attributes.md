@@ -4,6 +4,7 @@
 
 https://stackoverflow.com/questions/11770451/what-is-the-meaning-of-attribute-packed-aligned4
 
+#gcc #attributes #cling
 ### 1. alignment
 
 ```cpp
