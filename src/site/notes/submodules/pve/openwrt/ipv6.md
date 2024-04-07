@@ -50,3 +50,23 @@ DHCPv6 client
 ### 4. lan
 
 ![Pasted image 20240407161124.png](/img/user/submodules/pve/openwrt/attachments/Pasted%20image%2020240407161124.png)
+
+
+
+
+
+
+wired connection
+
+
+https://forum.proxmox.com/threads/how-to-setup-proxmox-for-ipv6-in-my-homenet.135475/post-599624
+https://www.saudiqbal.com/blog/ipv6-home-server-with-dynamic-prefix-for-vpn-web-server-rdp-and-firewall-setup-guide.php
+
+
+
+
+> [!NOTE] ip伪装
+> 注意wan口和lan口之间需要ip伪装，否则，openwrt可以访问外网但是不管有线无线连接的机器都无法访问外网
+
+
+![Pasted image 20240407235303.png](/img/user/submodules/pve/openwrt/attachments/Pasted%20image%2020240407235303.png)
