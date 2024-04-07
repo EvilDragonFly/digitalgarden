@@ -112,3 +112,13 @@ smartctl -a disk0
 ![Pasted image 20240404140224.png](/img/user/OperatingSystem/macos/attachments/Pasted%20image%2020240404140224.png)
 
 
+
+
+### 查看当前充电功率
+#power #
+```sh
+system_profiler SPPowerDataType | grep Wattage -C 5
+
+```
+
+
