@@ -56,6 +56,8 @@ DHCPv6 client
 
 
 
+
+
 wired connection
 
 
@@ -63,11 +65,12 @@ https://forum.proxmox.com/threads/how-to-setup-proxmox-for-ipv6-in-my-homenet.13
 https://www.saudiqbal.com/blog/ipv6-home-server-with-dynamic-prefix-for-vpn-web-server-rdp-and-firewall-setup-guide.php
 
 
+设置网线直连的proxmox网卡获取到公网ipv6
 
 
-> [!NOTE] ip伪装
-> 注意wan口和lan口之间需要ip伪装，否则，openwrt可以访问外网但是不管有线无线连接的机器都无法访问外网, 对于lan口的设备都是私网ip，需要借助ip伪装来实现局域网内的网络包都已wan口的公网ip进行转发
-https://www.right.com.cn/forum/thread-8243368-1-1.html
+https://wiki.debian.org/IPv6PrefixDelegation
+https://openwrt.org/docs/guide-user/network/ipv6/configuration
 
 
-![Pasted image 20240407235303.png](/img/user/submodules/pve/openwrt/attachments/Pasted%20image%2020240407235303.png)
+
+
