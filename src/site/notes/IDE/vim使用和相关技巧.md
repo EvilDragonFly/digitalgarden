@@ -39,7 +39,8 @@ ctrl R
 :s/hello/hi/g
 ```
 
-### 5.查看当前编码
+### 5.编码相关
+#encode #dos #unix
 
 
 ```bash
@@ -54,8 +55,25 @@ set encoding=utf-8
 #保存文件使用指定编码
 set fileencoding=utf-8
 # 解决windows文件在linux乱码问题
-set fileformat=unix
+:set ff=unix  #简写
+:set fileformat=unix
+:wq
+###
+^M$   windows换行符 "/r/n"
+$     unix, modern mac换行符 "\n"
+^M    早期mac换行符"\r"
+#
+{ #M}
+, Windows/Dos环境下换行符"/r/n",在unix环境打开会将/r渲染成^M
+# ^@ 表示空字符，通常不可见，但是vim会将其渲染成^@,^表示控制字符，`@`表示ASCII码为0的字符
+#对于文件在mac或者linux打开存在出现^M,^@等一些字符导致文件排布和原始系统查看不一致，一般可以通过以下手段还原：
+:set ff=unix
+:wq
+:%s/\%x00/\r/g   # 0号字符转换成换行符"\n"，在vim中\r表示换行符
+#如果对于文件出现的^@字符是想要去除而不是替换
+tr -d '\000' < inputfile > outputfile
 ```
+
 
 ### 6.语法高亮
 ```bash
