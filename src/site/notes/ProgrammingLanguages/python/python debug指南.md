@@ -4,6 +4,8 @@
 
 #python #gdb
 
+## 一.python gdb
+
 **references**:
 - https://www.podoliaka.org/2016/04/10/debugging-cpython-gdb/
 - https://geronimo-bergk.medium.com/use-gdb-to-debug-running-python-processes-a961dc74ae36
@@ -107,5 +109,31 @@ def main():
 if __name__ == "__main__":
     main()
 
+
+```
+
+
+## 二. pdb
+
+https://blog.csdn.net/wangyiyan315/article/details/122629255
+
+> [!NOTE] pdb
+> pdb不仅可以调试代码，也可以方便查看调用链，比如你想知道具体一个函数是从入口脚本怎么调用到这里的，可以直接在对应的代码片段加上`pdb.set_trace`，之后运行，达到pdb交互模式直接敲击w回车会直接显示当前调用栈
+
+
+```py
+import pdb
+pdb.set_trace()
+
+```
+
+### list
+
+```sh
+l
+# show where current line is in the code snippet
+l .
+# show specific range code snippet
+l 32,48
 
 ```
