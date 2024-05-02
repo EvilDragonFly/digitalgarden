@@ -48,6 +48,16 @@ sort -k5,5 -h -r | head
 # 查看文件夹内文件个数
 find . -type f |wc -l
 tree | tail -1
+
+# find and delete
+find /path/to/directory -type f -size +100M -delete
+
+# find and delete
+find . -xdev -type f -size +100M -print
+
+# find and execute command, + means all find results can be passed as arguments to comamnd
+find /path/to/directory -type f -name "*.txt" -exec ls -l {} +
+
 ```
 
 ### 4. 使用alias
