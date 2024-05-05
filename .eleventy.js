@@ -97,8 +97,8 @@ module.exports = function (eleventyConfig) {
   // add support for vercel speed insights
   // import { injectSpeedInsights } from '@vercel/speed-insights';
   // injectSpeedInsights();
-  var injectSpeedInsights = require("@vercel/speed-insights")
-  injectSpeedInsights()
+  var vercel = require("@vercel/speed-insights")
+  vercel.injectSpeedInsights()
 
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
