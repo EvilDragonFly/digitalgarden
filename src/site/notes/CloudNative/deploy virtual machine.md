@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/CloudNative/deploy virtual machine/","noteIcon":"3"}
 ---
 
+
 ![alessandro-armignacco-UATaDiqcmV0-unsplash.jpg|100%](/img/user/banner/alessandro-armignacco-UATaDiqcmV0-unsplash.jpg)
 #virsh #virt-install 
 ## create vm

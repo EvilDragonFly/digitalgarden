@@ -2,8 +2,9 @@
 {"dg-publish":true,"permalink":"/CodeSnippets/找到符号在那个so中定义/","noteIcon":"3"}
 ---
 
+深度搜索，定义的，而非undefined
 
-```bash
+```bash info:12,16
 # Check if the correct number of arguments are provided
 if [ "$#" -ne 2 ]; then
     echo "Usage: $0 <executable> <symbol>"

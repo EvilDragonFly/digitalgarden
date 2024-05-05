@@ -20,9 +20,10 @@ dns and (dns.qry.name == "www.x.com")
 
 ```bash
 ip.addr == 192.168.1.1
+ipv6.addr == fe80::2e0:67ff:fe27:fef1
 ```
 
-![Pasted image 20231118043924.png|undefined](/img/user/pics/Pasted%20image%2020231118043924.png)
+![Pasted image 20231118043924.png](/img/user/pics/Pasted%20image%2020231118043924.png)
 
 ## tcpdump工具使用
 

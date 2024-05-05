@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/OperatingSystem/macos/macos配置/","noteIcon":"3"}
 ---
 
+
 #macos
 1. macos键盘配置
 设置page up page down terminal history macth
@@ -9,7 +10,7 @@
 ![Pasted image 20230729125944.png](/img/user/pics/Pasted%20image%2020230729125944.png)
 
 #keyboard #hotkey
-## 1.terminal行首行尾快捷键设置
+### 1.terminal行首行尾快捷键设置
 mac终端默认到行首是ctrl A，行尾是ctrl E，fn <-和fn ->没有作用(离谱的设计)
 如果想要像其他软件一样使用fn加方向键来navigate in terminal，需要设置terminal
 这里设置了home(fn <-)和end(fn ->)会发送\\001(ctrl A)和\\005(ctrl E)到终端
@@ -17,12 +18,12 @@ https://stackoverflow.com/a/57179327/14637253
 ![Pasted image 20240130233704.png](/img/user/pics/Pasted%20image%2020240130233704.png)
 home: fn + <-
 end: fn + ->
-## 如果是使用使用terminal登录到linux，
+### 如果是使用使用terminal登录到linux，
 pageup :     shift + fn+ up
 pagedown: shift + fn + down
 home:         shift + fn + left
 end:            shift + fn + right
-## 在编辑器内如vscode内
+### 在编辑器内如vscode内
 home: command + left
 end:    command +right
 体验起来macos的键盘还有快捷键确实比win的差好多，对于自带的terminal登录到linux和不登录的快捷键和是不同的，且terminal和editor中的快捷键也不一样？？
@@ -31,7 +32,7 @@ shift+command+5, ,之后选择截取的是当前window或者指定区域，如�
 5. 快速打开桌面
 ![Pasted image 20230808004913.png](/img/user/pics/Pasted%20image%2020230808004913.png)
 
-## vscode添加code到系统路径
+### vscode添加code到系统路径
 windows安装vscode会默认将code可执行文件添加到系统路径，但是在mac中需要额外执行命令添加code到系统路径从而实现直接terminal中输入code  path打开制定路径的项目
 
 ![Pasted image 20230906130054.png](/img/user/pics/Pasted%20image%2020230906130054.png)
@@ -100,5 +101,24 @@ sudo launchctl unload /Library/LaunchDaemons/com.zerotier.one.plist
 2. `/User/user_name/Library/LaunchAgents`
 3. `/Library/LaunchDaemons`
 4. `/Library/LaunchAgents`
+
+### mac查看磁盘总read write数据量
+#disk #usage #smartctl
+```sh
+brew install smartmontools
+smartctl -a disk0
+
+```
+![Pasted image 20240404140224.png](/img/user/OperatingSystem/macos/attachments/Pasted%20image%2020240404140224.png)
+
+
+
+
+### 查看当前充电功率
+#power #
+```sh
+system_profiler SPPowerDataType | grep Wattage -C 5
+
+```
 
 

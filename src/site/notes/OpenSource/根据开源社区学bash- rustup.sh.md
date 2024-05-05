@@ -2,6 +2,10 @@
 {"dg-publish":true,"permalink":"/OpenSource/根据开源社区学bash- rustup.sh/","noteIcon":"3"}
 ---
 
+
+---
+dg-publish: true
+---
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup.sh`
 <font color="#d99694">${TERM+SET}可以判断TERM这个变量是否有被赋值，如果有被赋值，则结果为set，否者为空</font>
 

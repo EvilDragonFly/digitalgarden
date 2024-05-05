@@ -20,4 +20,6 @@ model.to(torch.device('cuda:0'))
 ### 1. tensor num_groups num_channels
 num_groups，第一个维度数
 num_channels，第2个维度数
-4. 
+
+
+![Pasted image 20231228201032.png](/img/user/pics/Pasted%20image%2020231228201032.png)
