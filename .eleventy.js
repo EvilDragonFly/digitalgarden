@@ -551,3 +551,7 @@ module.exports = function (eleventyConfig) {
     passthroughFileCopy: true,
   };
 };
+
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
+injectSpeedInsights();
