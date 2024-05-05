@@ -3,7 +3,16 @@
 ---
 
 #deadlock
-对于死锁问题可以用一个toy来进行举例，一个toy包含两个组件drum and drumstick，两个小孩想要击鼓的话需要同事持有drum and drumstick才能正常跑起来，但是如果A拿到了drum，B拿到了drumstick，除非其中一个be nice and give the other piece, 否则就会出现两个小孩都没法玩，在concurrency场景下的deadalock问题
+对于死锁问题可以用一个toy来进行举例，一个toy包含两个组件drum and drumstick，两个小孩想要击鼓的话需要同事持有drum and drumstick才能正常跑起来，但是如果A拿到了drum，B拿到了drumstick，除非其中一个be nice and give the other piece, 否则就会出现两个小孩都没法玩.
+在计算机世界，concurrency场景下的deadalock问题一般就是由以上现实例子一样存在多个线程相互等待的情况.
+
+> [!NOTE] Guidance
+> The guidelines for avoiding deadlock all boil down to one idea:  
+don’t wait for another thread if there’s a chance it’s waiting for you. The individual  
+guidelines provide ways of identifying and eliminating the possibility that the other  
+thread is waiting for you.
+
+
 避免死锁问题的一般解决方法
 ### 1. lock mutex in the same order
 每个进程必须先hold mutex A then hold mutex B，然而如果A和B是protect同一个类的不同instances的话就没法区分
@@ -31,3 +40,7 @@ class X {
   }
 };
 ```
+### 3.  avoid nested lock
+
+### 4.  AVOID CALLING USER- SUPPLIED CODE WHILE HOLDING A LOCK
+### 5. USE A LOCK HIERARCHY
