@@ -94,6 +94,10 @@ function getAnchorAttributes(filePath, linkTitle) {
 const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
 module.exports = function (eleventyConfig) {
+  // add support for vercel speed insights
+  import { injectSpeedInsights } from '@vercel/speed-insights';
+  injectSpeedInsights();
+
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });
@@ -552,6 +556,4 @@ module.exports = function (eleventyConfig) {
   };
 };
 
-import { injectSpeedInsights } from '@vercel/speed-insights';
 
-injectSpeedInsights();
