@@ -95,8 +95,10 @@ const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
 module.exports = function (eleventyConfig) {
   // add support for vercel speed insights
-  import { injectSpeedInsights } from '@vercel/speed-insights';
-  injectSpeedInsights();
+  // import { injectSpeedInsights } from '@vercel/speed-insights';
+  // injectSpeedInsights();
+  var injectSpeedInsights = require("@vercel/speed-insights")
+  injectSpeedInsights()
 
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
