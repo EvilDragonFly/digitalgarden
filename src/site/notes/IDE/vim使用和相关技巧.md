@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/IDE/vim使用和相关技巧/","noteIcon":"3"}
 ---
 
+![Pasted image 20240513012054.png](/img/user/IDE/attachments/Pasted%20image%2020240513012054.png)
 
 #vim
 ## 常用功能快捷键
