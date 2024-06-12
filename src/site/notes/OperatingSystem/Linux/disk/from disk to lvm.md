@@ -1,8 +1,8 @@
 ---
-{"dg-publish":true,"permalink":"/OperatingSystem/Linux/disk/from disk to lvm/","noteIcon":"3"}
+{"dg-publish":true,"permalink":"/OperatingSystem/Linux/disk/from disk to lvm/","tags":["lvm","vgextend","disk"],"noteIcon":"3"}
 ---
 
-#disk #lvm
+
 ### 1.逻辑卷创建
 ![Pasted image 20240205110736.png](/img/user/OperatingSystem/Linux/disk/attachments/Pasted%20image%2020240205110736.png)
 
