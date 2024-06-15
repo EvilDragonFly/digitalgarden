@@ -1,9 +1,9 @@
 ---
-{"dg-publish":true,"permalink":"/CloudNative/docker/docker/","noteIcon":"3"}
+{"dg-publish":true,"permalink":"/CloudNative/docker/docker/","tags":["docker"],"noteIcon":"3"}
 ---
 
 ![timo-stern-EvcUtLF12XQ-unsplash.jpg|100%](/img/user/banner/timo-stern-EvcUtLF12XQ-unsplash.jpg)
-#docker
+
 ### 1. docker的代理
 docker和maven，npm类似，代理和系统代理不一样需要单独配置，具体配置参考[docker docs](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
 关于docker的配置代理的文件主要是两个，可以根据需要编辑其中一个或者两个一起
@@ -20,13 +20,19 @@ systemctl restart docker
 systemctl show --property=Environment docker
 ```
 其中daemon.json的方式只能docker高版本支持(23.0以上)
+代理生效之后docker login, docker pull相关命令可以正常联网解析域名
 ### 2. Dockerfile的编写
+
+[[CloudNative/docker/dockerfile\|dockerfile]]
 ```bash
 ARG base=debian:v0  # 指定基础镜像，给出默认值，可以从docker build指定值覆盖
 FROM $bash
 ARG arg1 # 声明参数, 注意docker build指定的build arg最好得在dockerfile中声明
 ARG arg2 # 声明参数
+ARG WORKDIR=/home/pkgs
 USER root
+# 在镜像内部创建文件夹
+WORKDIR $WORKDIR
 CP *.deb /home
 RUN command1 $arg1 && \
 command2 $arg2
@@ -46,12 +52,16 @@ docker commit container_name repo:tag #将当前容器状态保存到镜像repo:
 docker save repo:tag > repo.tar # 将镜像保存到本地文件repo.tar
 docker load < repo.tar # 从本地文件导入镜像
 
+
 docker export container-name > ex.tar # 将容器当前文件系统保存，不包含之前的layer
 docker import ex.tar new_img:tag # 从export出来的文件导出成本地镜像
 
 # 查看具体一个image的大小
 docker images image:tag 
 
+# alias a image tag
+docker tag repo:tag newrepo:newtag
+docker tag imagehash newrepo:newtag
 ```
 
 export/import与save/load的区别
@@ -109,5 +119,22 @@ docker info -f '{{ .DockerRootDir }}'
 > 对于容器中映射系统路径需要注意最好不好映射和容器镜像中已有的文件夹路径一样的宿主机路径，否者容器内部的该路径会被系统路径覆盖，比如pip editable project所在路径被覆盖导致缺少包
 
 
+### 8.容器配置
 
+修改shm大小
+
+
+```sh
+#获取容器的配置路径
+docker inspect <container name> |grep <container id>
+#到对应路径修改hostconfig.json的ShmSize的配置
+
+```
+
+### 9. 更名
+
+```sh
+docker rename docker_old_name docker_new_name
+
+```
 ##  Docker Volume
