@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/OperatingSystem/windows/wsl/","noteIcon":"3"}
 ---
 
-#wsl
+#wsl #windows
 在不了解wsl的时候我感觉既然windows已经有了强大的hyperv，可以有多个亲和性很好的虚拟机，完全不需要这种四不像的wsl了，但是在接触了wsl之后才发现我错了，因为wsl的使能相当于使得windows的最后一个短板完全解决了，就是wsl的bash可以让熟悉linux命令行操作还有一系列的强大的packages开发者直接在windows原生filesystem中使用，可以说有了wsl的windows没有任一项落于macos。
 ### 1.安装wsl和ubuntu lts
 
