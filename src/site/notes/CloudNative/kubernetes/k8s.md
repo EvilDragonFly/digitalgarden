@@ -25,12 +25,19 @@ In summary, Kubernetes abstracts away the complexities of networking when it com
 
 k8s部署教程
 
+### 1.安装kubectl，kubelet，kubeadm
+
+### 2.安装CRI(take the containerd for example)
 
 
 ```sh title:"获取指定namespace的pods"
 kubectl -n public-resource get pod
 
 ```
+
+
+
+
 
 ### 1.路径映射和设备映射
 #mount
@@ -74,7 +81,22 @@ spec:
 
 ```sh
 kubectl delete -f a.yaml
+kubectl apply -f a.yaml
 
+# f means follow
 kubectl logs -f -n namespace podname
+
+kubectl describe -n namespace podname
+
+kubectl describe svc -n namespace podname
+
+kubectl describe pod -n namespace podname
+kubectl describe node
+
+
+kubectl get pod my-pod -n my-namespace -o yaml
+
+# 查看当前node使用的container runtime， docker or containerd or ？
+kubectl describe node node_name | grep Runtime
 
 ```
