@@ -52,8 +52,10 @@ DHCPv6 client
 ![Pasted image 20240407161124.png](/img/user/submodules/pve/openwrt/attachments/Pasted%20image%2020240407161124.png)
 
 
+### 5. 设置openclash ipv6 dns解析
 
 
+![Pasted image 20240424123408.png](/img/user/submodules/pve/openwrt/attachments/Pasted%20image%2020240424123408.png)
 
 
 
@@ -70,6 +72,10 @@ https://www.saudiqbal.com/blog/ipv6-home-server-with-dynamic-prefix-for-vpn-web-
 
 https://wiki.debian.org/IPv6PrefixDelegation
 https://openwrt.org/docs/guide-user/network/ipv6/configuration
+
+https://sysctl-explorer.net/net/ipv6/accept_ra/
+
+![Pasted image 20240412192126.png](/img/user/submodules/pve/openwrt/attachments/Pasted%20image%2020240412192126.png)
 
 
 
