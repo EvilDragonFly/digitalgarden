@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/AI/megatron/tp dp and pp/","noteIcon":"3"}
 ---
 
-
+#tp #pp
 Understanding the concepts of TP (Tensor Parallelism), DP (Data Parallelism), and PP (Pipeline Parallelism) in the context of Megatron involves grasping different strategies and optimizations used for distributed training of large-scale deep learning models, particularly in the domain of natural language processing (NLP). Let's delve into each of these concepts:
 
 ### 1. Tensor Parallelism (TP)
@@ -46,3 +46,10 @@ In summary, understanding TP, DP, and PP in Megatron involves recognizing how th
 ```
 dp = world_size / tp / pp
 ```
+
+pp并行原理
+![Pasted image 20240626012411.png](/img/user/AI/megatron/attachments/Pasted%20image%2020240626012411.png)
+![Pasted image 20240626013930.png](/img/user/AI/megatron/attachments/Pasted%20image%2020240626013930.png)
+
+
+https://www.bilibili.com/video/BV1WD4y1t7Ba/?spm_id_from=333.337.search-card.all.click&vd_source=9746697102ead983ecbe06ba12115f1e
