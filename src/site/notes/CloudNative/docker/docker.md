@@ -96,9 +96,11 @@ docker cp host_path container_name:path
 
 ### 6. 更改docker存放image位置
 ```bash
+# 查看当前的docker的data root
+docker info | grep "Docker Root Dir"
 docker info -f '{{ .DockerRootDir }}'
 ```
-vim /etc/docker/daemon.json
+`vim /etc/docker/daemon.json`
 ```json
 { 
    "data-root": "/runtime/docker"
@@ -120,7 +122,7 @@ docker info -f '{{ .DockerRootDir }}'
 
 
 ### 8.容器配置
-
+#shm
 修改shm大小
 
 
