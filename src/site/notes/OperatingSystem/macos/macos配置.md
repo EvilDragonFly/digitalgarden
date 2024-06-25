@@ -121,4 +121,28 @@ system_profiler SPPowerDataType | grep Wattage -C 5
 
 ```
 
+### 防止mac息屏之后亮度回到default brightness
+![Pasted image 20240408104234.png](/img/user/OperatingSystem/macos/attachments/Pasted%20image%2020240408104234.png)
 
+
+### 截屏
+#cut 
+
+```
+# 全屏截图
+command shift 3
+# 指针截图
+command shift 4
+# full function 截图
+command shift 5
+```
+
+对于非官方或者未识别developer的工具安装或者使用时出现被拦截的时候可以选择信任使能
+
+
+### 查看packages下载位置
+```sh
+brew info pybind11
+brew --cellar pybind
+
+```
