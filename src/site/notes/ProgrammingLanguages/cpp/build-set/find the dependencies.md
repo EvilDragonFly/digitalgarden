@@ -30,6 +30,8 @@ export LIBRARY_PATH
 库文件依赖文件
 ```sh
 objdump -T <static_library.a> | grep NEEDED
+nm --undefined-only <static_library.a>
+
 ldd dynamic_library.so
 
 ```
