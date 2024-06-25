@@ -43,8 +43,7 @@ tar cf - $path | pv -s $(du -sb $path|awk '{print $1}') | gzip > file.tar.gz
 
 ```shell
 # 查找大文件
-find . -xdev -type f -size +100M -print | xargs ls -lh | \
-sort -k5,5 -h -r | head
+find . -xdev -type f -size +100M -print | xargs ls -lh | sort -k5,5 -h -r | head
 # 查看文件夹内文件个数
 find . -type f |wc -l
 tree | tail -1
@@ -171,5 +170,12 @@ echo "=========" index
 for i in ${!arr[@]}
 	echo ${arr[$i]}
 done
+
+```
+### 14.文件过滤
+```sh
+ll |cut -d ' ' -f 10|awk '{$1=$1}1'
+#awk -F指定空格，输入字符串多个空格连在一起会被当成一个间隔符，和cut不一样
+ll|awk -F ' ' '{print $10}'
 
 ```
