@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/ProgrammingLanguages/cpp/cpp-concurrency/C++ Concurrency in Action Notes/","noteIcon":"3"}
 ---
+
 # 1. Hello, world of concurrency in C++!
 task switching vs hardware concurrecny
 > in order to do the interleaving, the system has to perform a context switch every time it changes from one task to another, and this takes time. In order to perform a context switch, the OS has to save the state and instruction pointer for the currently running task, work out which task to switch to, and reload the CPU state for the task being switched to. The CPU will then potentially have to load the memory for the instructions and data for the new task into cache, which can prevent the CPU from executing any instructions, causing further delay.
