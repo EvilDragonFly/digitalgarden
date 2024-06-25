@@ -2,6 +2,10 @@
 {"dg-publish":true,"permalink":"/ProgrammingLanguages/cpp/cpp-concurrency/dead lock/","noteIcon":"3"}
 ---
 
+references:
+https://medium.com/@back_to_basics/c-11-locking-strategy-adopt-lock-and-defer-lock-eeedf76a2689
+https://stackoverflow.com/questions/76549242/why-use-defer-lock-with-unique-lock
+
 #deadlock
 对于死锁问题可以用一个toy来进行举例，一个toy包含两个组件drum and drumstick，两个小孩想要击鼓的话需要同事持有drum and drumstick才能正常跑起来，但是如果A拿到了drum，B拿到了drumstick，除非其中一个be nice and give the other piece, 否则就会出现两个小孩都没法玩.
 在计算机世界，concurrency场景下的deadalock问题一般就是由以上现实例子一样存在多个线程相互等待的情况.
