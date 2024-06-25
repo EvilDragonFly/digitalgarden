@@ -70,3 +70,18 @@ ifstatus wan6 | jsonfilter -e '@.l3_device' 2>/dev/null
 4.下电上电的情况的话等到dynv6服务(start=299)启动阶段到wan6获取到公网ipv6地址需要7mins左右，所以设置dynv6服务器在start函数入口先`sleep 10m`保证在机器获取到公网ipv6地址之后再进行ipv6地址同步到dynv6
 
 5. 服务器启动时候的命令是bash /etc/rc.common servicepath boot
+
+
+
+![Pasted image 20240406085614.png](/img/user/submodules/pve/openwrt/attachments/Pasted%20image%2020240406085614.png)
+
+考虑到/usr/bin/dynv6-update.sh脚本是bash -e，所以不能直接
+
+![Pasted image 20240406094925.png](/img/user/submodules/pve/openwrt/attachments/Pasted%20image%2020240406094925.png)
+
+
+
+几个注意的点
+1. init启动的几个service是同步进行的，A依赖B的话，A的START值可以设置大于B，对于在init.d中需要执行的一些耗时的操作需要在后台进行，否者存在依赖关系可能导致一些进程没法正常启动(之前没有后台启动导致网页服务没有启动，也一直没发获取到ipv6)
+2. 对于脚本中的shellbang中加上了-e的选项之后，命令中存在返回值非0的操作都会导致进程退出，所以不能使用`echo $?`的方式来判断上一个命令是否
+3. 对于日志定位的话可以在脚本开头加上`exec > /root/dynv6.log 2&1> 
