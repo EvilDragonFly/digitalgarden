@@ -41,3 +41,8 @@ Understanding the concepts of TP (Tensor Parallelism), DP (Data Parallelism), an
 - **Optimization**: The choice and configuration of TP, DP, and PP strategies in Megatron depend on factors such as the model architecture, dataset size, and available hardware resources. Optimizing these strategies is crucial for achieving high-performance distributed training of large NLP models.
 
 In summary, understanding TP, DP, and PP in Megatron involves recognizing how these parallelization techniques are leveraged to distribute model parameters, training data, and computations across multiple devices, thereby enabling efficient and scalable training of large deep learning models in the context of NLP tasks. Each strategy plays a critical role in optimizing performance and resource utilization during distributed training.
+
+
+```
+dp = world_size / tp / pp
+```
