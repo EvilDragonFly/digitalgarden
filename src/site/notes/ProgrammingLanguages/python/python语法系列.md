@@ -6,15 +6,16 @@
 reference:https://realpython.com/list-comprehension-python/
 
 ```python
-new_list = [expression for member in iterable if conditional]
+# new_list = [expression for member in iterable if conditional]
 
-maxtrix=[
+matrix=[
 		 [0,0,0],
 		 [1,1,1],
 		 [2,2,2]
 ]
 # 注意先迭代行，comprehension从左至右
-[number for row in matrix for number in matrix]
+a = [number for row in matrix for number in row]
+print(a)
 ```
 
 |                                              |                 |                                                            |
