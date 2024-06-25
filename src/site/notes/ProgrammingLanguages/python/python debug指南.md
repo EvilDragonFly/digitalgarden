@@ -75,8 +75,10 @@ py-bt
 py-list
 py-locals
 #多线程
+info inferiros #查看当前进程
+thread #查看当前线程id
 info threads
-thread <tid>
+thread <tid> #切换指定线程
 thread apply all py-list
 thread apply all py-bt
 
@@ -125,6 +127,10 @@ https://blog.csdn.net/wangyiyan315/article/details/122629255
 import pdb
 pdb.set_trace()
 
+# just print
+import traceback
+traceback.print_stack()
+
 ```
 
 ### list
@@ -137,3 +143,16 @@ l .
 l 32,48
 
 ```
+
+
+
+```
+locals()  # 获取当前上下文的局部变量
+globals()
+
+```
+
+### segement fault
+
+https://stackoverflow.com/questions/16731115/how-to-debug-a-python-segmentation-fault
+https://blog.csdn.net/ARPOSPF/article/details/130248065
