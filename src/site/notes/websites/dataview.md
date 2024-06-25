@@ -4,8 +4,12 @@
 
 #dataview
 
+https://zhuanlan.zhihu.com/p/393550306
+https://obsidian.rocks/dataview-in-obsidian-a-beginners-guide/
+https://blacksmithgu.github.io/obsidian-dataview/queries/structure/
+
 ```js title:"get the note number in a line"
-166
+256
 
 ```
 
