@@ -65,17 +65,94 @@ wired connection
 
 https://forum.proxmox.com/threads/how-to-setup-proxmox-for-ipv6-in-my-homenet.135475/post-599624
 https://www.saudiqbal.com/blog/ipv6-home-server-with-dynamic-prefix-for-vpn-web-server-rdp-and-firewall-setup-guide.php
-
-
-设置网线直连的proxmox网卡获取到公网ipv6
-
-
 https://wiki.debian.org/IPv6PrefixDelegation
 https://openwrt.org/docs/guide-user/network/ipv6/configuration
 
 https://sysctl-explorer.net/net/ipv6/accept_ra/
 
 ![Pasted image 20240412192126.png](/img/user/submodules/pve/openwrt/attachments/Pasted%20image%2020240412192126.png)
+
+### 6.网线连接客户端接受ipv6分配
+设置网线直连的proxmox网卡获取到公网ipv6
+```yaml hl:52,53
+auto lo
+iface lo inet loopback
+
+allow-bond0 enp4s0
+iface enp4s0 inet manual
+iface enp4s0 inet6 manual
+
+#auto bond0
+iface bond0 inet manual
+        bond-slaves enp4s0
+        bond-miimon 1000
+        bond-mode active-backup
+        bond-primary enp4s0
+#       dns-nameserver 202.101.172.35
+#       dns-nameserver 8.8.8.8
+#       dns-nameserver 114.114.114.114
+
+iface bond0 inet6 manual
+        bond-slaves enp4s0
+        bond-miimon 1000
+        bond-mode active-backup
+        bond-primary enp4s0
+
+allow-bond0 wlp4s0
+iface wlp4s0 inet manual
+        bond_miimon 1000
+        bond_mode active-backup
+        wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+        wpa-bridge bond0
+        bond-master bond0
+        bond-give-a-chance 10
+
+iface wlp4s0 inet6 manual
+        bond_miimon 1000
+        bond_mode active-backup
+        wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+        wpa-bridge bond0
+        bond-master bond0
+        bond-give-a-chance 10
+
+auto br
+#iface br inet6 dhcp
+iface br inet manual
+        address 192.168.66.2/24
+        gateway 192.168.66.1
+        bridge-ports bond0
+        bridge-stp off
+        bridge-fd 0
+        dns-nameservers 202.101.172.35 8.8.8.8 114.114.114.114
+
+iface br inet6 dhcp
+        accept_ra 2
+        request_prefix 1
+#        bridge-ports bond0
+#        bridge-stp off
+#        bridge-fd 0 
+
+
+#auto br:0
+#iface br:0 inet6 dhcp
+#        bridge-ports bond0
+#        bridge-stp off
+#        bridge-fd 0
+
+
+auto vmbr0
+iface vmbr0 inet static
+        address 10.3.24.111/24
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+        post-up   echo 1 > /proc/sys/net/ipv4/ip_forward
+        post-up   iptables -t nat -A POSTROUTING -s '10.3.24.0/24' -o br -j MASQUERADE
+        post-down iptables -t nat -D POSTROUTING -s '10.3.24.0/24' -o br -j MASQUERADE
+```
+
+
+
 
 
 
