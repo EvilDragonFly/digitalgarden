@@ -5,7 +5,7 @@
 #python/pip#pip
 ![freestocks-flOVXZWbjJ4-unsplash.jpg|100%](/img/user/banner/freestocks-flOVXZWbjJ4-unsplash.jpg)
 ### pip常用命令
-pip配置文件:~/.pip/pip.config，配置示例，pip使用系统代理就行
+pip配置文件:~/.pip/pip.config(linux), %APPDATA/pip/pip.ini(windows)，配置示例，pip使用系统代理就行
 
 ```
 [global]
