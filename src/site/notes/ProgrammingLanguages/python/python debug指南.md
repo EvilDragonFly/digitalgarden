@@ -152,6 +152,13 @@ globals()
 
 ```
 
+### condition breakpoint
+
+```sh
+# pause when `my_var is None` is true
+(Pdb) break your_script.py:4, my_var is None
+```
+
 ### segement fault
 
 https://stackoverflow.com/questions/16731115/how-to-debug-a-python-segmentation-fault
