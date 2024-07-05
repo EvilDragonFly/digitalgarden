@@ -139,6 +139,10 @@ command shift 5
 
 对于非官方或者未识别developer的工具安装或者使用时出现被拦截的时候可以选择信任使能
 
+### 窗口
+- 窗口最小化 `command M`
+- 窗口全屏 `fn F`
+
 
 ### 查看packages下载位置
 ```sh
