@@ -4,7 +4,7 @@
 
 https://www.pythontutorial.net/python-oop/python-__repr__/
 
-`__str__` and `__repr__`
+### 1. `__str__` and `__repr__`
 
 
 |     | `__str__`                                                                                                                                                      | `__repr__`                                                                                                                                                                                                                                                                                                                                            |
@@ -30,3 +30,20 @@ print(repr(person))
 print(person)
 
 ```
+
+### 2. `__call__`
+
+The `__call__` method allows an instance of a class to be called as if it were a function. This can be useful for objects that represent operations or transformations.
+```py
+
+class Adder:
+    def __init__(self, amount):
+        self.amount = amount
+
+    def __call__(self, value):
+        return value + self.amount
+
+add_five = Adder(5)
+print(add_five(10))  # Output: 15
+```
+3. 
