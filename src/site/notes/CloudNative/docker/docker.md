@@ -4,7 +4,9 @@
 
 ![timo-stern-EvcUtLF12XQ-unsplash.jpg|100%](/img/user/banner/timo-stern-EvcUtLF12XQ-unsplash.jpg)
 
-### 1. docker的代理
+### 1. docker的网络
+
+#### 1.1代理
 docker和maven，npm类似，代理和系统代理不一样需要单独配置，具体配置参考[docker docs](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
 关于docker的配置代理的文件主要是两个，可以根据需要编辑其中一个或者两个一起
 /etc/docker/daemon.json
@@ -21,6 +23,44 @@ systemctl show --property=Environment docker
 ```
 其中daemon.json的方式只能docker高版本支持(23.0以上)
 代理生效之后docker login, docker pull相关命令可以正常联网解析域名
+#### 1.2 mtu and dns
+`docker build`的时候如果存在`timeout`或者`cannot resolve host`之类的问题可以考虑mtu和dns的配置
+
+对于timeout可能是我们docker的mtu和宿主机的网卡的mtu不一致，docker默认的是1500
+```sh
+# 查看物理机mtu网卡
+ifconfig eth0 | grep mtu
+# 设置物理机网卡mtu
+ifconfig eth0 mtu 1500
+# 设置docker的mtu?
+ifconfig docker0 mtu 1500
+
+```
+
+/etc/docker/daemon.json
+```json
+{
+	"mtu": 1500,
+	"dns": ["8.8.8.8"]
+}
+
+```
+/etc/default/docker
+```sh
+DOCKER_OPTS="--mtu=1500"
+
+```
+docker-compose
+```yaml
+networks:
+	default:
+		driver: bridge
+		driver_opts:
+			com.docker.network.driver.mtu: 1500
+
+```
+
+
 ### 2. Dockerfile的编写
 
 [[CloudNative/docker/dockerfile\|dockerfile]]
