@@ -81,6 +81,8 @@ command2 $arg2
 
 ```bash
 docker build -t . --build-arg arg1='a' --build-arg='b'
+#设置clean build，不使用上一次build的cache
+docker build -t base:v0 --no-cache .
 
 ```
 dockerfile中两个连续的RUN之间的状态并不连续一致的，每一个RUN开始都会进入到/home/currentUser目录下，而非后一个RUN命令开始会在前一个RUN最后所在的目录下
