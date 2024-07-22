@@ -104,6 +104,10 @@ docker images image:tag
 # alias a image tag
 docker tag repo:tag newrepo:newtag
 docker tag imagehash newrepo:newtag
+
+# 查看容器的基础镜像
+docker inspect --format='{{.Config.Image}}' <container_name>
+docker ps --format "table {{.ID}}\t{{.Image}}" 
 ```
 
 export/import与save/load的区别
