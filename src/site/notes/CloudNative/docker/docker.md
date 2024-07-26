@@ -107,7 +107,7 @@ docker tag imagehash newrepo:newtag
 
 # 查看容器的基础镜像
 docker inspect --format='{{.Config.Image}}' <container_name>
-docker ps --format "table {{.ID}}\t{{.Image}}" 
+docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Image}}" 
 ```
 
 export/import与save/load的区别
@@ -166,7 +166,11 @@ docker info -f '{{ .DockerRootDir }}'
 > [!NOTE] 注意
 > 对于容器中映射系统路径需要注意最好不好映射和容器镜像中已有的文件夹路径一样的宿主机路径，否者容器内部的该路径会被系统路径覆盖，比如pip editable project所在路径被覆盖导致缺少包
 
+```sh
+# 查看当前容器映射的物理机路径
+docker inspect --format {{.HostConfig.Binds}} <container_name>
 
+```
 ### 8.容器配置
 #shm
 修改shm大小
