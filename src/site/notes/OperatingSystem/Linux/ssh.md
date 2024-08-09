@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/OperatingSystem/Linux/ssh/","noteIcon":"3"}
 ---
 
+https://feihu.me/blog/2014/env-problem-when-ssh-executing-command-on-remote/
+
 
 #ssh
 
@@ -91,4 +93,14 @@ ssh wrt_through_pve
 # 不使用配置文件的话可以直接使用如下方式直接登录
 ssh -J middle_server target_server
 
+```
+
+#forward
+### 3.端口转发和隧道
+
+```sh
+# 其中 `-N` 表示不执行远程命令，只是建立隧道。
+ssh -L [本地IP:]本地端口:目标服务器IP:目标端口 用户名@SSH服务器 -N
+# 建立一个隧道本地的2777端口的包转发到172.31.224.191上的22端口，然后转发到remote的2777端口
+ssh -L 2777:localhost:2777 root@172.31.224.191 -p 22
 ```
